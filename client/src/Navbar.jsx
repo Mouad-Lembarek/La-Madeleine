@@ -5,7 +5,9 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src="/La%20Madeleine.png" alt="La Madeleine Logo" />
+        <Link to="/">
+          <img src="/La%20Madeleine.png" alt="La Madeleine Logo" />
+        </Link>
       </div>
       <ul className="navbar-links">
         <li><Link to="/">Accueil</Link></li>
