@@ -62,3 +62,61 @@ body, html, #root {
   margin: 0;
   font-family: 'Georgia', serif;
 }
+
+.contact-form {
+  max-width: 420px;
+  margin: 32px auto 0 auto;
+  background: rgba(255,255,255,0.95);
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: 'Georgia', serif;
+  font-size: 1.05rem;
+  color: #3e2723;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px 12px;
+  border: 1px solid #d7ccc8;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #f9f6f2;
+  resize: none;
+  transition: border 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border: 1.5px solid #a0522d;
+  outline: none;
+}
+
+.submit-btn {
+  background: #a0522d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: #7b381a;
+}
