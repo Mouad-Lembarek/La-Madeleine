@@ -1,0 +1,52 @@
+body, html, #root, .home-background {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.home-background {
+  min-height: 100vh;
+  width: 100vw;
+  background: url('/home.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+  margin-top: 40px;
+  margin-bottom: 24px;
+}
+
+.main-logo {
+  width: 320px;
+  max-width: 80vw;
+  background: rgba(255,255,255,0.85);
+  border-radius: 24px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+  padding: 16px 32px;
+}
+
+.welcome-text {
+  background: rgba(255,255,255,0.85);
+  border-radius: 16px;
+  padding: 32px 48px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  text-align: center;
+}
+
+.welcome-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+  color: #3e2723;
+  font-family: 'Georgia', serif;
+}
+
+.welcome-text p {
+  font-size: 1.25rem;
+  color: #5d4037;
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
