@@ -1,0 +1,14 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background: rgba(255,255,255,0.95);
+  color: #3e2723;
+  text-align: center;
+  padding: 16px 0;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.06);
+  z-index: 100;
+} 
