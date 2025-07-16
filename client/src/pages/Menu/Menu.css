@@ -8,4 +8,48 @@
 h2 {
   color: #c97c5d;
   font-family: 'Georgia', serif;
+}
+
+.menu-categories-bar {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0 1.5rem 0;
+  border-bottom: 2px solid #f0e6d6;
+  padding-bottom: 0.5rem;
+}
+
+.menu-category-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #a67c52;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.menu-category-btn.selected {
+  color: #c97c5d;
+}
+
+.menu-category-btn.selected::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #c97c5d;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+}
+
+.menu-category-btn:hover {
+  color: #c97c5d;
+}
+
+.menu-category-content {
+  margin-top: 2rem;
 } 
