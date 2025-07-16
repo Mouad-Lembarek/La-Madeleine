@@ -2,16 +2,15 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import Accueil from './pages/Accueil';
-import APropos from './pages/APropos';
-import Menu from './pages/Menu';
-import Contact from './pages/Contact';
-import Reservation from './pages/Reservation';
+import Accueil from './pages/Accueil/Accueil';
+import APropos from './pages/APropos/APropos';
+import Menu from './pages/Menu/Menu';
+import Contact from './pages/Contact/Contact';
+import Reservation from './pages/Reservation/Reservation';
 
 function App() {
   return (
     <>
-      <img src="/La%20Madeleine.png" alt="La Madeleine Background" className="background-logo" />
       <Router>
         <Navbar />
         <div className="main-content">

@@ -1,0 +1,11 @@
+.page-content {
+  padding: 2rem;
+  background: #fff8f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+h2 {
+  color: #c97c5d;
+  font-family: 'Georgia', serif;
+} 

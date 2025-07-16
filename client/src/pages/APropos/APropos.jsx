@@ -1,3 +1,5 @@
+import './APropos.css';
+
 function APropos() {
   return (
     <div className="page-content">

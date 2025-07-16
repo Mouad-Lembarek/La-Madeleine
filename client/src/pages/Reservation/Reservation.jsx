@@ -1,3 +1,5 @@
+import './Reservation.css';
+
 function Reservation() {
   return (
     <div className="page-content">
