@@ -8,4 +8,75 @@
 h2 {
   color: #7c8a52;
   font-family: 'Georgia', serif;
+}
+
+.reservation-form {
+  max-width: 420px;
+  margin: 2rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  color: #111;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+select {
+  padding: 0.7rem 1rem;
+  border: 1.5px solid #b7a77c;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #111;
+  background: #fff;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border: 1.5px solid #7c8a52;
+}
+
+.reservation-next,
+.reservation-submit {
+  background: #7c8a52;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reservation-next:hover,
+.reservation-submit:hover {
+  background: #5d6a3a;
+}
+
+.reservation-confirmation {
+  background: #e6f7d9;
+  color: #2e4d1c;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(44, 94, 36, 0.07);
 } 
