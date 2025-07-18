@@ -1,202 +1,215 @@
+/* Footer Madeleine - Style Vintage/Postal */
 .footer-madeleine {
-  background: #741D2D !important;
+  background: #741D2D;
   color: #F8F2ED;
-  width: 100vw;
-  min-height: 320px;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  width: 100%;
   position: relative;
-  overflow: hidden;
   font-family: 'Georgia', serif;
-  z-index: 10;
-  box-shadow: 0 -2px 16px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
-.footer-separator {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 2;
-  line-height: 0;
-  pointer-events: none;
-}
 
-.footer-separator svg {
-  display: block;
-  width: 100vw;
-  height: 90px;
-}
 
+/* Section principale du footer */
 .footer-main-row {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  padding: 60px 40px 40px 40px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 32px 32px 32px;
-  position: relative;
-  z-index: 3;
-  min-height: 180px;
-  width: 100%;
+  gap: 40px;
 }
 
+/* Colonnes du footer */
 .footer-col {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  min-width: 200px;
   text-align: center;
 }
 
+/* Colonne adresse */
 .footer-address {
-  font-size: 1.08rem;
-  color: #F8F2ED;
-  opacity: 0.92;
-  margin-bottom: 18px;
-  align-items: flex-start;
   text-align: left;
-  justify-content: center;
-  width: 100%;
 }
 
-.footer-logo-center {
+.footer-address-content {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
+  gap: 12px;
+}
+
+.footer-address-link {
+  color: #F8F2ED;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.footer-address-link:hover {
+  color: #E0E0D8;
+}
+
+/* Colonne logo centre */
+.footer-logo-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .footer-logo-img {
-  width: 90px;
-  height: auto;
-  margin-bottom: 8px;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .footer-brand {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
+  color: #F8F2ED;
+  font-family: 'Georgia', serif;
   letter-spacing: 1px;
-  color: #F8F2ED;
 }
 
-.footer-slogan {
-  font-size: 1.1rem;
-  color: #F8F2ED;
-  opacity: 0.8;
-  margin-bottom: 8px;
-}
-
-.footer-family {
-  align-items: flex-end;
+/* Colonne contact */
+.footer-contact {
   text-align: right;
-  justify-content: center;
 }
 
-.footer-family-title {
-  font-size: 1.08rem;
-  font-style: italic;
-  color: #F8F2ED;
-  opacity: 0.85;
-  margin-bottom: 10px;
+.footer-contact-title {
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.footer-social-icons {
+.footer-contact-info {
   display: flex;
-  gap: 18px;
-  justify-content: center;
-  margin-bottom: 12px;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
 }
 
-.footer-social-icons a {
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1rem;
+}
+
+.footer-icon {
   color: #F8F2ED;
-  transition: color 0.2s;
+  font-size: 1.2rem;
+  min-width: 20px;
 }
 
-.footer-social-icons a:hover {
-  color: #F8F2ED;
-  opacity: 0.7;
+/* Ligne de séparation */
+.footer-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #F8F2ED, transparent);
+  margin: 0 40px;
+  opacity: 0.6;
 }
 
+/* Section basse du footer */
 .footer-bottom-row {
-  width: 100vw;
-  margin-top: 18px;
-  padding: 0 0 8px 0;
-  position: relative;
-  z-index: 4;
-}
-
-.footer-bottom-line {
-  width: 100vw;
-  height: 1.5px;
-  background: #F8F2ED;
-  opacity: 0.18;
-  margin-bottom: 8px;
+  padding: 30px 40px 40px 40px;
 }
 
 .footer-bottom-content {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 32px;
-  width: 100%;
 }
 
 .footer-copyright {
-  font-size: 0.98rem;
+  font-size: 1rem;
   color: #F8F2ED;
-  opacity: 0.7;
-  margin-top: 0;
+  opacity: 0.8;
 }
 
 .footer-signature {
-  font-family: 'Georgia', serif;
-  font-style: italic;
+  font-weight: bold;
   color: #F8F2ED;
-  opacity: 0.9;
 }
 
 .footer-bottom-social {
   display: flex;
-  gap: 14px;
-  align-items: center;
+  gap: 20px;
 }
 
 .footer-bottom-social a {
   color: #F8F2ED;
-  opacity: 0.8;
   transition: color 0.2s;
+  opacity: 0.8;
 }
 
 .footer-bottom-social a:hover {
-  color: #F8F2ED;
+  color: #E0E0D8;
   opacity: 1;
 }
 
-@media (max-width: 900px) {
-  .footer-main-row, .footer-bottom-content {
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-main-row {
     flex-direction: column;
-    align-items: center;
-    padding: 60px 12px 0 12px;
-    gap: 24px;
+    gap: 30px;
+    padding: 40px 20px 30px 20px;
   }
+  
   .footer-col {
-    min-width: unset;
-    margin-bottom: 12px;
-    text-align: center !important;
-    align-items: center !important;
-    width: 100%;
+    text-align: center;
   }
+  
+  .footer-address {
+    text-align: center;
+  }
+  
+  .footer-contact {
+    text-align: center;
+  }
+  
+  .footer-contact-info {
+    align-items: center;
+  }
+  
+  .footer-bottom-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .footer-divider {
+    margin: 0 20px;
+  }
+  
   .footer-bottom-row {
-    padding-bottom: 16px;
+    padding: 20px 20px 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-main-row {
+    padding: 30px 15px 20px 15px;
+  }
+  
+  .footer-logo-img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .footer-brand {
+    font-size: 1.5rem;
+  }
+  
+  .footer-address-link,
+  .footer-contact-item {
+    font-size: 1rem;
   }
 } 
