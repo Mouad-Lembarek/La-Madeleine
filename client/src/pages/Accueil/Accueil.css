@@ -430,4 +430,69 @@ body, #root, .App {
   .gallery-overlay p {
     font-size: 0.9rem;
   }
+}
+
+/* Effet de vagues animées */
+.hero-waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.waves-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.wave {
+  animation: waveAnimation 6s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.wave1 {
+  animation-delay: 0s;
+  opacity: 0.8;
+}
+
+.wave2 {
+  animation-delay: 2s;
+  opacity: 0.6;
+}
+
+.wave3 {
+  animation-delay: 4s;
+  opacity: 0.4;
+}
+
+@keyframes waveAnimation {
+  0%, 100% {
+    transform: translateX(0) scaleY(1);
+  }
+  25% {
+    transform: translateX(-10px) scaleY(1.1);
+  }
+  50% {
+    transform: translateX(5px) scaleY(0.9);
+  }
+  75% {
+    transform: translateX(-5px) scaleY(1.05);
+  }
+}
+
+/* Responsive pour les vagues */
+@media (max-width: 768px) {
+  .hero-waves {
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-waves {
+    height: 60px;
+  }
 } 

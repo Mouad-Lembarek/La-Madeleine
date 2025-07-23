@@ -2,8 +2,27 @@ import React from 'react';
 import { FaInstagram, FaTiktok, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 function Footer() {
-  return (
+    return (
     <footer className="footer-madeleine">
+      {/* SVG de vague au haut du footer */}
+      <div className="footer-wave-svg-container">
+        <svg 
+          width="1440" 
+          height="153" 
+          viewBox="0 0 1440 153" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+          className="footer-wave-svg"
+        >
+          <path 
+            fill-rule="evenodd" 
+            clip-rule="evenodd" 
+            d="M-19.9878 32.0699C12.7122 54.2879 51.9843 76.4199 113.012 76.4199C279.679 76.4199 256.012 32.0699 422.679 32.0699C589.345 32.0699 574.845 90.6379 741.512 90.6379C908.179 90.6379 939.346 0 1106.01 0C1272.68 0 1256.01 88.2149 1422.68 88.2149C1485.43 88.2149 1523.71 82.9649 1557.01 76.4199C1562.98 75.2466 1557.07 85.9159 1557.01 91.9999C1550.93 716.809 -26.9403 716.554 -42.9879 91.9209C-43.4001 75.8733 -33.2657 23.0482 -19.9878 32.0699Z" 
+            fill="#741D2D"
+          />
+        </svg>
+      </div>
+      
       <div className="footer-main-row">
         <div className="footer-col footer-address">
           <div className="footer-address-content">
