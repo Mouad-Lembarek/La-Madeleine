@@ -82,39 +82,6 @@ function Accueil() {
             </motion.button>
           </motion.div>
         </div>
-        
-        {/* Effet de vagues animées */}
-        <div className="hero-waves">
-          <svg 
-            className="waves-svg" 
-            xmlns="http://www.w3.org/2000/svg" 
-            viewBox="0 0 1440 320"
-            preserveAspectRatio="none"
-          >
-            <defs>
-              <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#F8F2ED" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#F8F2ED" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="#F8F2ED" stopOpacity="0.8" />
-              </linearGradient>
-            </defs>
-            <path 
-              className="wave wave1" 
-              fill="url(#waveGradient)"
-              d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-            />
-            <path 
-              className="wave wave2" 
-              fill="url(#waveGradient)"
-              d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,181.3C672,192,768,160,864,144C960,128,1056,128,1152,138.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-            />
-            <path 
-              className="wave wave3" 
-              fill="url(#waveGradient)"
-              d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,208C672,213,768,203,864,186.7C960,171,1056,149,1152,154.7C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-            />
-          </svg>
-        </div>
       </div>
 
       {/* Section Description et Galerie */}
@@ -180,7 +147,7 @@ function Accueil() {
               </motion.div>
             </div>
           </motion.div>
-    </div>
+        </div>
       </section>
     </>
   );
