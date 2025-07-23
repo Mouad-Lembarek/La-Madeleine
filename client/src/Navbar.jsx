@@ -10,7 +10,9 @@ function Navbar() {
         <li><Link to="/menu">Menu</Link></li>
       </ul>
       <div className="navbar-logo">
-        <img src="./public/LaMadeleine.png" alt="La Madeleine Logo" />
+        <Link to="/">
+          <img src="./public/LaMadeleine.png" alt="La Madeleine Logo" />
+        </Link>
       </div>
       <ul className="navbar-links navbar-links-right">
         <li><Link to="/contact">Contact</Link></li>
