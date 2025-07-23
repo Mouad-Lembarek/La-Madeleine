@@ -1,109 +1,105 @@
 import './Reservation.css';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-function ReservationForm() {
+function capitalize(str) {
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
+function Reservation() {
   const [step, setStep] = useState(1);
+  const [confirmed, setConfirmed] = useState(false);
   const [form, setForm] = useState({
     nom: '',
     prenom: '',
-    phone: '',
+    telephone: '',
     email: '',
-    guests: 1,
-    reservation_date: '',
-    reservation_time: '',
+    personnes: '',
     motif: '',
-    table: ''
+    table: '',
   });
+  const [telError, setTelError] = useState('');
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    if (e.target.name === 'telephone') {
+      setTelError('');
+    }
   };
 
   const handleNext = (e) => {
     e.preventDefault();
+    // Validation du numéro de téléphone
+    const tel = form.telephone.replace(/\D/g, '');
+    if (tel.length !== 10) {
+      setTelError('Le numéro de téléphone doit contenir exactement 10 chiffres.');
+      return;
+    }
     setStep(2);
   };
 
-  const handleBack = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStep(1);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response = await fetch('http://127.0.0.1:8000/api/reservations/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form)
-    });
-    if (response.ok) {
-      alert('Réservation envoyée !');
-      setForm({
-        nom: '',
-        prenom: '',
-        phone: '',
-        email: '',
-        guests: 1,
-        reservation_date: '',
-        reservation_time: '',
-        motif: '',
-        table: ''
-      });
-      setStep(1);
-    } else {
-      alert('Erreur lors de la réservation');
-    }
+    setConfirmed(true);
   };
 
   return (
-    <form className="reservation-form" onSubmit={step === 1 ? handleNext : handleSubmit}>
-      {step === 1 && (
+    <div className="page-content">
+      <h2>Réservation</h2>
+      {confirmed ? (
+        <div className="reservation-confirmation">
+          <p>Réservation confirmée pour {capitalize(form.nom)} {capitalize(form.prenom)}, veuillez vérifier votre mail.</p>
+        </div>
+      ) : (
         <>
-          <label>Nom</label>
-          <input name="nom" value={form.nom} onChange={handleChange} required />
-
-          <label>Prénom</label>
-          <input name="prenom" value={form.prenom} onChange={handleChange} required />
-
-          <label>Téléphone</label>
-          <input name="phone" value={form.phone} onChange={handleChange} required />
-
-          <label>Email</label>
-          <input name="email" type="email" value={form.email} onChange={handleChange} required />
-
-          <button type="submit">Suivant</button>
+          {step === 1 && (
+            <form className="reservation-form" onSubmit={handleNext}>
+              <div className="form-group">
+                <label htmlFor="nom">Nom</label>
+                <input type="text" id="nom" name="nom" value={form.nom} onChange={handleChange} required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" value={form.prenom} onChange={handleChange} required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="telephone">Numéro de téléphone</label>
+                <input type="tel" id="telephone" name="telephone" value={form.telephone} onChange={handleChange} required />
+                {telError && <span className="error-message">{telError}</span>}
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input type="email" id="email" name="email" value={form.email} onChange={handleChange} required />
+              </div>
+              <button type="submit" className="reservation-next">Suivant</button>
+            </form>
+          )}
+          {step === 2 && (
+            <form className="reservation-form" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="personnes">Nombre de personnes</label>
+                <input type="number" id="personnes" name="personnes" min="1" value={form.personnes} onChange={handleChange} required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="motif">Motif de réservation</label>
+                <input type="text" id="motif" name="motif" value={form.motif} onChange={handleChange} required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="table">Choix de table</label>
+                <select id="table" name="table" value={form.table} onChange={handleChange} required>
+                  <option value="">Sélectionner une table</option>
+                  <option value="fenetre">Près de la fenêtre</option>
+                  <option value="terrasse">En terrasse</option>
+                  <option value="salle">En salle</option>
+                </select>
+              </div>
+              <button type="submit" className="reservation-submit">Réserver</button>
+            </form>
+          )}
         </>
       )}
-
-      {step === 2 && (
-        <>
-          <label>Nombre de personnes</label>
-          <input name="guests" type="number" min="1" max="20" value={form.guests} onChange={handleChange} required />
-
-          <label>Date</label>
-          <input name="reservation_date" type="date" value={form.reservation_date} onChange={handleChange} required />
-
-          <label>Heure</label>
-          <input name="reservation_time" type="time" value={form.reservation_time} onChange={handleChange} required />
-
-          <label>Motif (optionnel)</label>
-          <textarea name="motif" value={form.motif} onChange={handleChange} />
-
-          <label>Choix du table</label>
-          <select name="latableid" value={form.latableid} onChange={handleChange} required>
-            <option value="">Sélectionnez une table</option>
-            <option value="1">Près de la fenêtre</option>
-            <option value="2">En terrasse</option>
-            <option value="3">Au centre de la salle</option>
-            <option value="4">Coin tranquille</option>
-          </select>
-
-          <button onClick={handleBack}>Retour</button>
-          <button type="submit">Réserver</button>
-        </>
-      )}
-    </form>
+    </div>
   );
 }
 
-export default ReservationForm; 
+export default Reservation; 

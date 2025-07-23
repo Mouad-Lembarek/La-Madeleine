@@ -7,9 +7,49 @@
   width: 100%;
   position: relative;
   font-family: 'Georgia', serif;
+  overflow: hidden;
 }
 
 
+
+
+
+/* SVG de vague au haut du footer */
+.footer-wave-svg-container {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin-top: -50px;
+  margin-bottom: -50px;
+  overflow: visible;
+  z-index: 1;
+}
+
+.footer-wave-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: waveFloat 8s ease-in-out infinite;
+  transform: scaleY(0.7);
+}
+
+@keyframes waveFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.footer-torn-svg {
+  width: 100%;
+  height: 60px;
+  display: block;
+  margin-bottom: -8px;
+  z-index: 2;
+  position: relative;
+}
 
 /* Section principale du footer */
 .footer-main-row {
@@ -20,6 +60,8 @@
   max-width: 1200px;
   margin: 0 auto;
   gap: 40px;
+  position: relative;
+  z-index: 2;
 }
 
 /* Colonnes du footer */
@@ -157,6 +199,11 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .footer-wave-svg-container {
+    height: 100px;
+    top: -100px;
+  }
+  
   .footer-main-row {
     flex-direction: column;
     gap: 30px;
@@ -195,6 +242,11 @@
 }
 
 @media (max-width: 480px) {
+  .footer-wave-svg-container {
+    height: 80px;
+    top: -80px;
+  }
+  
   .footer-main-row {
     padding: 30px 15px 20px 15px;
   }

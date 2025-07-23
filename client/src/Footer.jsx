@@ -2,8 +2,21 @@ import React from 'react';
 import { FaInstagram, FaTiktok, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 function Footer() {
-  return (
+    return (
     <footer className="footer-madeleine">
+      {/* SVG torn paper top */}
+      <svg
+        className="footer-torn-svg"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1000 100"
+        width="100%"
+        height="60"
+        preserveAspectRatio="none"
+        style={{ display: 'block' }}
+      >
+        <path d="M0 0v41s40 117.6 337 20.7c46.7-15.2 104.8-46 163-46 58.1 0 116.3 30.8 163 46 297 97 337-20.7 337-20.7V0H0Z" fill="#F8F2ED"></path>
+      </svg>
+      
       <div className="footer-main-row">
         <div className="footer-col footer-address">
           <div className="footer-address-content">
