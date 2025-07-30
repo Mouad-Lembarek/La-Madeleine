@@ -52,4 +52,68 @@ h2 {
 
 .menu-category-content {
   margin-top: 2rem;
+}
+
+/* Boissons Styles */
+.boissons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.boissons-category {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-left: 4px solid #c97c5d;
+}
+
+.boissons-category-title {
+  color: #c97c5d;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0e6d6;
+}
+
+.boissons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.boissons-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f8f4f0;
+  transition: background-color 0.2s;
+}
+
+.boissons-item:last-child {
+  border-bottom: none;
+}
+
+.boissons-item:hover {
+  background-color: #fefefe;
+  border-radius: 6px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.item-name {
+  font-weight: 500;
+  color: #4a4a4a;
+  flex: 1;
+}
+
+.item-price {
+  font-weight: 700;
+  color: #c97c5d;
+  font-size: 1.1rem;
+  min-width: 80px;
+  text-align: right;
 } 
