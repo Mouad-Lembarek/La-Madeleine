@@ -261,6 +261,48 @@ const platsData = {
   }
 };
 
+const breakfastData = {
+  brunchesMarocains: {
+    title: '🇲🇦 BRUNCHS MAROCAINS',
+    items: [
+      { name: 'Brunch Fassi (Harira fassia, Msemmen farci aux amandes & miel, Bghrir, Œufs beldi à l\'huile d\'olive, Fromage frais, olives noires, Pain fassi traditionnel, Thé à la menthe & jus d\'orange)', price: '99 MAD' },
+      { name: 'Brunch Marrakchi (Chfenj, Harira orge, Batbout beldi nature & à l\'huile d\'olive, Msemen nature ou au khliî, Œufs au cumin, Amlou, dattes & fromage beldi, Thé à la menthe & jus d\'orange)', price: '99 MAD' },
+      { name: 'Petit déjeuner "Tangerois" (Assortiment Marocain, Beurre beldi, fromage frais à l\'huile d\'olive et thym, miel, Amlou, confiture, Tagine au œufs et Khlii, Soupe Marocaine, Thé à la menthe Tangérois, Jus d\'orange frais)', price: '105 MAD' },
+      { name: 'Brunch Casablancais (Avocado toast beldi avec œuf poche, Mini batbout farcis, Rghaïf fines herbes, Granola maison aux dattes, Smoothie seasonal/café crème, Pain aux céréales & confiture)', price: '99 MAD' },
+      { name: 'Brunch Aroubi (Bissara chaude avec huile d\'olive, Msemen bien doré au feu de bois, Matlouh chiar, Œufs durs au cumin, Lait fermenté, Olives vertes & fromage frais, Thé à la menthe du douar)', price: '105 MAD' },
+    ]
+  },
+  breakfastsInternationaux: {
+    title: '🌍 PETITS DÉJEUNERS INTERNATIONAUX',
+    items: [
+      { name: 'Petit déjeuner "Français" (Deux viennoiserie au choix, Corbeille de pain, beurre portion, confiture individuelle, Œufs au choix, Pain perdu caramélisé, Yaourt maison, baule de fruits de saisons, Jus d\'orange frais, café ou thé)', price: '95 MAD' },
+      { name: 'Petit déjeuner "Italien" (Deux viennoiserie au choix, Corbeille de pain, beurre portion, confiture individuelle, Œufs au choix, Assiette de charcuterie Halal, Bruschetta d\'avocat, tomate marinée, salade roquette et mozzarella fraiche, Jus d\'orange frais et Cappuccino)', price: '115 MAD' },
+      { name: 'Petit déjeuner "Libanais" (Corbeille de pain, beurre portion, confiture individuelle, Œufs chakchouka ou au choix, Houmous à l\'huile d\'olive, labneh, Baba Ghanoush, Safiha jobna, Assiette de légumes découpés et salade roquettes, Jus d\'orange frais et thé à la menthe)', price: '130 MAD' },
+      { name: 'Petit déjeuner "Espagnol" (Boisson chaude et jus, corbeille de pain toasté, purée de tomates fraîches, Manchego, tapenade d\'olives vertes, Pesto de persil, huile d\'olives aux herbes)', price: '130 MAD' },
+      { name: 'Petit déjeuner "Americain" (Boisson chaude et jus d\'orange, Saucisse de poulet ou dinde, Œufs au choix, Pancake, Pommes de terre persillées, Yaourt, Toast, Fromage, Légumes)', price: '150 MAD' },
+      { name: 'Petit déjeuner "Healthy" (Tartine d\'avocat et fromage frais, tomate cerise confite, Œufs au choix, Muesli de flocons d\'avoine au yaourt maison, banane, mangue, et fruit secs, Jus d\'orange, Café ou thé à la menthe)', price: '120 MAD' },
+    ]
+  },
+  aLaCarte: {
+    title: '🍽️ À LA CARTE',
+    items: [
+      { name: 'Corbeille de pain, beurre portion, confiture individuelle', price: '20 MAD' },
+      { name: 'Panier de Viennoiserie (chocolatine, croissant, pain au raisin)', price: '25 MAD' },
+      { name: 'Assortiment Marocain (Baghrir, masamen, harcha, batbout, beurre, confiture, miel)', price: '30 MAD' },
+      { name: 'Tagine d\'œuf au Khlii', price: '40 MAD' },
+      { name: 'Œufs au choix (omelette, œuf au plat, œuf brouillés)', price: '25 MAD' },
+      { name: 'Pain perdu caramélisé à la cannelle et farcis au chocolat à tartiner', price: '20 MAD' },
+      { name: 'Assiette de charcuterie Halal', price: '30 MAD' },
+      { name: 'Oeufs chakchouka aux poivrons et tomate épicée', price: '40 MAD' },
+      { name: 'Assortiment libanais (Houmous, Labneh, Baba Ghanoush, Pain pita)', price: '50 MAD' },
+      { name: 'Safiha jobna (Mini pizza au fromage blanc et thym)', price: '45 MAD' },
+      { name: 'Yaourt maison', price: '17 MAD' },
+      { name: 'Bole de fruits de saisons', price: '20 MAD' },
+      { name: 'Muesli de flocons d\'avoine au yaourt maison, banane, mangue, miel et fruit secs', price: '60 MAD' },
+    ]
+  }
+};
+
 function Menu() {
   const [selectedCategory, setSelectedCategory] = useState('boissons');
 
@@ -344,6 +386,26 @@ function Menu() {
     );
   };
 
+  const renderBreakfast = () => {
+    return (
+      <div className="boissons-container">
+        {Object.values(breakfastData).map((category, index) => (
+          <div key={index} className="boissons-category">
+            <h3 className="boissons-category-title">{category.title}</h3>
+            <ul className="boissons-list">
+              {category.items.map((item, itemIndex) => (
+                <li key={itemIndex} className="boissons-item">
+                  <span className="item-name">{item.name}</span>
+                  <span className="item-price">{item.price}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div className="page-content">
       <h2>Menu</h2>
@@ -363,9 +425,7 @@ function Menu() {
         {selectedCategory === 'salades' && renderSalades()}
         {selectedCategory === 'entrees' && renderEntrees()}
         {selectedCategory === 'plats' && renderPlats()}
-        {selectedCategory === 'breakfast' && (
-          <ul>{/* Ajoute ici les breakfast */}</ul>
-        )}
+        {selectedCategory === 'breakfast' && renderBreakfast()}
       </div>
     </div>
   );
