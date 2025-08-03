@@ -21,6 +21,7 @@ body, #root, .App {
 /* Container principal du hero */
 .hero-container {
   position: relative;
+  
   width: 100%;
   height: 100vh;
   min-height: 600px;
@@ -98,17 +99,24 @@ body, #root, .App {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Sous-titre */
-.hero-subtitle {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
-  font-weight: 600;
-  color: #F8F2ED;
+/* Titre principal */
+.hero-title {
+  display: block;
+  text-align: center;
   margin-bottom: 2rem;
+}
+
+.hero-title-line {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: #F8F2ED;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   letter-spacing: 0.05em;
+  line-height: 1.2;
   text-transform: uppercase;
-  opacity: 0.9;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
 }
 
 /* Description */
@@ -273,24 +281,25 @@ body, #root, .App {
 
 .about-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(3rem, 6vw, 4.5rem);
   font-weight: 700;
   color: #741D2D;
   margin-bottom: 2rem;
   letter-spacing: -0.02em;
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .about-description {
   font-family: 'Lato', sans-serif;
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-  font-weight: 300;
+  font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+  font-weight: 400;
   color: #4D2C1D;
   line-height: 1.8;
   margin-bottom: 1.5rem;
   opacity: 0.9;
   text-align: center;
-  max-width: 600px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1073,23 +1082,39 @@ body, #root, .App {
 
 .values-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 4rem;
   position: relative;
   z-index: 2;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .value-card {
-  background: rgba(248, 242, 237, 0.1);
-  padding: 3rem 2rem;
-  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 242, 237, 0.9) 100%);
+  padding: 3.5rem 2.5rem;
+  border-radius: 25px;
   text-align: center;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(248, 242, 237, 0.2);
-  transition: all 0.4s ease-in-out;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(116, 29, 45, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.value-card:nth-child(1) {
+  transform: translateY(-20px);
+}
+
+.value-card:nth-child(2) {
+  transform: translateY(0);
+}
+
+.value-card:nth-child(3) {
+  transform: translateY(-20px);
 }
 
 .value-card::before {
@@ -1099,7 +1124,7 @@ body, #root, .App {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(248, 242, 237, 0.1) 0%, rgba(248, 242, 237, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(116, 29, 45, 0.05) 0%, rgba(201, 124, 93, 0.05) 100%);
   opacity: 0;
   transition: opacity 0.4s ease-in-out;
 }
@@ -1108,52 +1133,109 @@ body, #root, .App {
   opacity: 1;
 }
 
+.value-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #741D2D, #c97c5d, #d4af37);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.value-card:hover::after {
+  opacity: 1;
+}
+
 .value-card:hover {
-  transform: scale(1.05) rotateY(5deg);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(116, 29, 45, 0.2);
+  border-color: rgba(116, 29, 45, 0.3);
+}
+
+.value-card:nth-child(1):hover {
+  transform: translateY(-30px) scale(1.03);
+}
+
+.value-card:nth-child(2):hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+.value-card:nth-child(3):hover {
+  transform: translateY(-30px) scale(1.03);
 }
 
 .value-number {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: rgba(248, 242, 237, 0.3);
-  margin-bottom: 1rem;
+  font-size: 4rem;
+  font-weight: 800;
+  color: #741D2D;
+  margin-bottom: 1.5rem;
   display: block;
+  opacity: 0.8;
+  position: relative;
+}
+
+.value-number::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #741D2D, #c97c5d);
+  border-radius: 2px;
 }
 
 .value-card h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
-  color: #F8F2ED;
-  margin-bottom: 1rem;
+  color: #741D2D;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
 }
 
 .value-card p {
   font-family: 'Lato', sans-serif;
-  font-size: 1rem;
-  font-weight: 300;
-  color: #F8F2ED;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #4D2C1D;
+  line-height: 1.7;
   opacity: 0.9;
 }
 
 /* Section Témoignages */
 .testimonials-section {
-  background: linear-gradient(135deg, #F8F2ED 0%, #F0E6E0 100%);
-  padding: 100px 0;
+  background: #F8F2ED;
+  padding: 120px 0;
   position: relative;
+  overflow: hidden;
+}
+
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(116, 29, 45, 0.1), transparent);
 }
 
 .testimonials-header {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 100px;
+  position: relative;
+  z-index: 2;
 }
 
 .testimonials-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2.8rem, 5vw, 4rem);
   font-weight: 700;
   color: #741D2D;
   margin-bottom: 1.5rem;
@@ -1161,11 +1243,11 @@ body, #root, .App {
 }
 
 .testimonials-subtitle {
-  font-family: 'Lato', sans-serif;
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-  font-weight: 300;
-  color: #4D2C1D;
-  opacity: 0.8;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  font-weight: 400;
+  color: #666;
+  opacity: 0.9;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -1185,26 +1267,54 @@ body, #root, .App {
 }
 
 .testimonial-card {
-  background: #F8F2ED;
-  padding: 3rem;
-  border-radius: 20px;
-  box-shadow: 0 15px 50px rgba(116, 29, 45, 0.15);
+  background: white;
+  padding: 4rem 3rem;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
   text-align: center;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
+  border: 1px solid rgba(116, 29, 45, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 8rem;
+  color: rgba(116, 29, 45, 0.05);
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
 }
 
 .testimonial-image {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid #741D2D;
-  box-shadow: 0 5px 15px rgba(116, 29, 45, 0.3);
+  border: 4px solid white;
+  box-shadow: 0 10px 30px rgba(116, 29, 45, 0.15);
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-image::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #741D2D, #c97c5d);
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .testimonial-image img {
@@ -1214,24 +1324,36 @@ body, #root, .App {
 }
 
 .testimonial-text p {
-  font-family: 'Lato', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 300;
-  color: #4D2C1D;
-  line-height: 1.8;
-  font-style: italic;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #2c2c2c;
+  line-height: 1.7;
+  font-style: normal;
   margin: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .testimonial-rating {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.3rem;
   justify-content: center;
+  margin: 1rem 0;
 }
 
 .star {
-  font-size: 1.2rem;
-  animation: starTwinkle 2s ease-in-out infinite;
+  width: 24px;
+  height: 24px;
+  color: #ffd700;
+  filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.3));
+  animation: starTwinkle 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.star:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 3px 6px rgba(255, 215, 0, 0.5));
 }
 
 .star:nth-child(2) { animation-delay: 0.2s; }
@@ -1246,52 +1368,30 @@ body, #root, .App {
   }
   50% {
     opacity: 0.7;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 }
 
 .testimonial-author h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #741D2D;
   margin-bottom: 0.5rem;
+  letter-spacing: 1px;
 }
 
 .testimonial-author span {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
-  font-weight: 300;
-  color: #4D2C1D;
-  opacity: 0.7;
+  font-weight: 400;
+  color: #666;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.testimonial-dots {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
 
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(116, 29, 45, 0.3);
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.dot.active {
-  background: #741D2D;
-  transform: scale(1.2);
-}
-
-.dot:hover {
-  background: #741D2D;
-  transform: scale(1.1);
-}
 
 /* Responsive Design pour les nouvelles sections */
 @media (max-width: 768px) {
@@ -1380,7 +1480,7 @@ body, #root, .App {
 
 .story-follow-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
   font-weight: 700;
   color: #741D2D;
   margin: 0;
@@ -1391,20 +1491,23 @@ body, #root, .App {
 
 .story-follow-text {
   display: block;
-  font-size: 0.8em;
-  font-weight: 600;
-  color: #4D2C1D;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.1em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 0.8rem;
+  letter-spacing: 4px;
   text-transform: uppercase;
+  opacity: 0.8;
 }
 
 .story-follow-highlight {
   display: block;
-  font-size: 1.2em;
-  font-weight: 800;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 7vw, 5.5rem);
+  font-weight: 700;
   color: #741D2D;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
 }
 
@@ -1413,25 +1516,31 @@ body, #root, .App {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
-  opacity: 0.1;
+  width: 180px;
+  height: 180px;
+  opacity: 0.08;
   z-index: 1;
-  animation: instagramFloat 6s ease-in-out infinite;
+  animation: instagramFloat 8s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(116, 29, 45, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
 }
 
 @keyframes instagramFloat {
   0%, 100% {
     transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 0.08;
   }
   25% {
-    transform: translate(-50%, -50%) scale(1.05) rotate(2deg);
+    transform: translate(-50%, -50%) scale(1.08) rotate(1deg);
+    opacity: 0.12;
   }
   50% {
-    transform: translate(-50%, -50%) scale(1.1) rotate(0deg);
+    transform: translate(-50%, -50%) scale(1.15) rotate(0deg);
+    opacity: 0.15;
   }
   75% {
-    transform: translate(-50%, -50%) scale(1.05) rotate(-2deg);
+    transform: translate(-50%, -50%) scale(1.08) rotate(-1deg);
+    opacity: 0.12;
   }
 }
 
@@ -1445,24 +1554,29 @@ body, #root, .App {
 /* Story Grid */
 .story-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
   margin-bottom: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .story-item {
   position: relative;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(116, 29, 45, 0.15);
-  background: #F8F2ED;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  background: white;
   cursor: pointer;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(116, 29, 45, 0.05);
 }
 
 .story-item:hover {
-  box-shadow: 0 20px 60px rgba(116, 29, 45, 0.25);
-  transform: translateY(-5px);
+  box-shadow: 0 25px 70px rgba(116, 29, 45, 0.2);
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(116, 29, 45, 0.2);
 }
 
 .story-image-container {
@@ -1537,6 +1651,40 @@ body, #root, .App {
   transform: translateY(0);
 }
 
+.instagram-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #741D2D 0%, #c97c5d 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(15px);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(116, 29, 45, 0.3);
+}
+
+.story-item:hover .instagram-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.15);
+  box-shadow: 0 15px 40px rgba(116, 29, 45, 0.4);
+}
+
+.instagram-icon {
+  width: 35px;
+  height: 35px;
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
 .story-overlay-text h3 {
   font-family: 'Playfair Display', serif;
   font-size: 1.3rem;
@@ -1564,22 +1712,22 @@ body, #root, .App {
 }
 
 .story-cta-button {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #741D2D;
-  background: #F8F2ED;
-  border: 2px solid #741D2D;
-  padding: 1.2rem 2.5rem;
+  color: white;
+  background: linear-gradient(135deg, #741D2D 0%, #c97c5d 100%);
+  border: none;
+  padding: 1.3rem 3rem;
   border-radius: 50px;
   cursor: pointer;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 2px;
   display: inline-flex;
   align-items: center;
   gap: 1rem;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 15px rgba(116, 29, 45, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(116, 29, 45, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -1600,11 +1748,10 @@ body, #root, .App {
 }
 
 .story-cta-button:hover {
-  background: #741D2D;
-  color: #F8F2ED;
-  border-color: #741D2D;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(116, 29, 45, 0.3);
+  background: linear-gradient(135deg, #c97c5d 0%, #741D2D 100%);
+  color: white;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(116, 29, 45, 0.4);
 }
 
 .story-cta-button:active {
@@ -1638,9 +1785,10 @@ body, #root, .App {
   }
   
   .story-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     margin-bottom: 40px;
+    max-width: 400px;
   }
   
   .story-image-container {
@@ -1654,6 +1802,16 @@ body, #root, .App {
       rgba(116, 29, 45, 0.9) 0%,
       rgba(116, 29, 45, 0.7) 100%
     );
+  }
+  
+  .instagram-overlay {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .instagram-icon {
+    width: 25px;
+    height: 25px;
   }
   
   .story-cta {
@@ -1734,12 +1892,12 @@ body, #root, .App {
 
 .specialites-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-size: clamp(2.8rem, 5vw, 4rem);
   font-weight: 700;
   color: #741D2D;
   text-align: center;
   margin-bottom: 4rem;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .specialite-row {
@@ -1944,7 +2102,7 @@ body, #root, .App {
 
 .values-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2.8rem, 5vw, 4rem);
   font-weight: 700;
   color: #741D2D;
   margin-bottom: 1.5rem;
@@ -1973,8 +2131,18 @@ body, #root, .App {
 
 @media (max-width: 1024px) {
   .values-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    max-width: 900px;
+  }
+  
+  .value-card {
+    padding: 3rem 2rem;
+  }
+  
+  .value-card:nth-child(1),
+  .value-card:nth-child(3) {
+    transform: translateY(-10px);
   }
 }
 
@@ -2033,6 +2201,35 @@ body, #root, .App {
   line-height: 1.7;
   opacity: 0.92;
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 400px;
+  }
+  
+  .value-card {
+    padding: 2.5rem 2rem;
+    transform: none !important;
+  }
+  
+  .value-card:hover {
+    transform: translateY(-5px) scale(1.02) !important;
+  }
+  
+  .value-number {
+    font-size: 3rem;
+  }
+  
+  .value-card h3 {
+    font-size: 1.6rem;
+  }
+  
+  .value-card p {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 600px) {

@@ -30,6 +30,18 @@ function Footer() {
               45 Av. Mohammed V, Marrakech 40000
             </a>
           </div>
+          <div className="footer-map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.8202053398304!2d-8.001289999999997!3d31.6290992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafef00515c735f%3A0x2c802512213945f3!2sLa%20Madeleine!5e1!3m2!1sen!2sma!4v1754228590253!5m2!1sen!2sma"
+              width="100%"
+              height="200"
+              style={{ border: 0, borderRadius: '8px' }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="La Madeleine - 45 Av. Mohammed V, Marrakech"
+            ></iframe>
+          </div>
         </div>
 
         <div className="footer-col footer-logo-center">
