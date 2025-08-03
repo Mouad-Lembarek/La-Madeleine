@@ -75,8 +75,7 @@
 }
 
 .navbar-links a.active, .navbar-links a:focus {
-  background: #4D2C1D;
-  color: #F8F2ED;
+  color: #741D2D;
 }
 
 /* Barre fine sous la navbar */

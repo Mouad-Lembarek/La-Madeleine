@@ -1,11 +1,775 @@
-.page-content {
-  padding: 2rem;
-  background: #f3ede7;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+/* Hero Section - Inspiré de BlackChich */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000;
 }
 
-h2 {
-  color: #7c5e3c;
-  font-family: 'Georgia', serif;
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4) contrast(1.1);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(116, 29, 45, 0.4) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hero-main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-description {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Section Notre Menu Continue Son Voyage */
+.menu-journey-section {
+  padding: 6rem 0;
+  background: white;
+}
+
+.menu-journey-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.menu-journey-text {
+  padding-right: 2rem;
+}
+
+.menu-journey-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #741D2D;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.menu-journey-description {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  color: #4D2C1D;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.fusion-kitchen-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: #741D2D;
+  margin-bottom: 1.5rem;
+}
+
+.fusion-kitchen-description {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #4D2C1D;
+  line-height: 1.7;
+}
+
+.menu-journey-images {
+  position: relative;
+}
+
+.image-stack {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.overlay-image {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  border: 4px solid white;
+}
+
+/* Section À Propos de la Fusion */
+.fusion-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #741D2D 0%, #4D2C1D 100%);
+  color: white;
+}
+
+.fusion-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
+}
+
+.fusion-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.fusion-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.fusion-description {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+}
+
+.fusion-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.fusion-text p {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.fusion-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Notre Plat Signature */
+.signature-section {
+  padding: 6rem 0;
+  background: white;
+}
+
+.signature-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.signature-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.signature-title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.signature-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 300;
+  color: #666;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.signature-main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: #741D2D;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.signature-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  font-weight: 400;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+.signature-description {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #4D2C1D;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* Section Boissons */
+.drinks-section {
+  padding: 6rem 0;
+  background: #F8F2ED;
+}
+
+.drinks-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.drinks-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4.5vw, 3rem);
+  font-weight: 700;
+  color: #741D2D;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+.drinks-description {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #4D2C1D;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.drinks-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Expérience Culinaire */
+.culinary-experience-section {
+  padding: 6rem 0;
+  background: #000;
+  color: white;
+  text-align: center;
+}
+
+.culinary-experience-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.culinary-experience-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.culinary-experience-description {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+}
+
+/* Section Notre Mission */
+.mission-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #F8F2ED 0%, #f0e8e0 100%);
+}
+
+.mission-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.mission-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #741D2D;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.mission-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: #4D2C1D;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mission-card {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(116, 29, 45, 0.1);
+  border: 1px solid rgba(116, 29, 45, 0.05);
+  transition: all 0.3s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(116, 29, 45, 0.15);
+}
+
+.mission-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.mission-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #741D2D;
+  margin-bottom: 1rem;
+}
+
+.mission-card p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  color: #4D2C1D;
+  line-height: 1.6;
+}
+
+/* Section Notre Équipe */
+.team-section {
+  padding: 6rem 0;
+  background: white;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.team-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #741D2D;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.team-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: #4D2C1D;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-member {
+  text-align: center;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(116, 29, 45, 0.1);
+  transition: all 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(116, 29, 45, 0.15);
+}
+
+.member-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover .member-image img {
+  transform: scale(1.05);
+}
+
+.member-info {
+  padding: 2rem;
+}
+
+.member-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #741D2D;
+  margin-bottom: 0.5rem;
+}
+
+.member-role {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #c97c5d;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.member-info p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: #4D2C1D;
+  line-height: 1.6;
+}
+
+/* Section Nos Valeurs */
+.values-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #741D2D 0%, #4D2C1D 100%);
+  color: white;
+}
+
+.values-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.values-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #F8F2ED;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.values-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: rgba(248, 242, 237, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.value-item {
+  background: rgba(248, 242, 237, 0.1);
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(248, 242, 237, 0.2);
+  transition: all 0.3s ease;
+}
+
+.value-item:hover {
+  background: rgba(248, 242, 237, 0.15);
+  transform: translateY(-3px);
+}
+
+.value-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #c97c5d;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.value-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #F8F2ED;
+  margin-bottom: 1rem;
+}
+
+.value-item p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(248, 242, 237, 0.9);
+  line-height: 1.6;
+}
+
+/* Section Statistiques */
+.stats-section {
+  padding: 4rem 0;
+  background: #F8F2ED;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem;
+}
+
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 6vw, 4rem);
+  font-weight: 700;
+  color: #741D2D;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4D2C1D;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .menu-journey-content,
+  .fusion-content,
+  .signature-content,
+  .drinks-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .menu-journey-text {
+    padding-right: 0;
+  }
+  
+  .overlay-image {
+    bottom: -20px;
+    right: -20px;
+    width: 50%;
+    height: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 80vh;
+    min-height: 500px;
+  }
+  
+  .hero-content {
+    padding: 0 1.5rem;
+  }
+  
+  .menu-journey-section,
+  .fusion-section,
+  .signature-section,
+  .drinks-section,
+  .culinary-experience-section {
+    padding: 4rem 0;
+  }
+  
+  .menu-journey-content,
+  .fusion-content,
+  .signature-content,
+  .drinks-content {
+    padding: 0 1.5rem;
+  }
+  
+  .image-stack {
+    height: 400px;
+  }
+  
+  .overlay-image {
+    bottom: -15px;
+    right: -15px;
+    width: 45%;
+    height: 45%;
+  }
+  
+  .signature-image img,
+  .fusion-image img,
+  .drinks-image img {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: 70vh;
+    min-height: 400px;
+  }
+  
+  .hero-content {
+    padding: 0 1rem;
+  }
+  
+  .menu-journey-section,
+  .fusion-section,
+  .signature-section,
+  .drinks-section,
+  .culinary-experience-section {
+    padding: 3rem 0;
+  }
+  
+  .menu-journey-content,
+  .fusion-content,
+  .signature-content,
+  .drinks-content {
+    padding: 0 1rem;
+  }
+  
+  .image-stack {
+    height: 300px;
+  }
+  
+  .overlay-image {
+    bottom: -10px;
+    right: -10px;
+    width: 40%;
+    height: 40%;
+  }
+  
+  .signature-image img,
+  .fusion-image img,
+  .drinks-image img {
+    height: 250px;
+  }
+  
+  .fusion-header {
+    padding: 0 1rem;
+  }
+  
+  .culinary-experience-content {
+    padding: 0 1rem;
+  }
 } 

@@ -72,14 +72,14 @@ function Accueil() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Sous-titre avec animation fade-in */}
-            <motion.h2 
-              className="hero-subtitle"
+            <motion.h1 
+              className="hero-title"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              EXPÉRIENCE CULINAIRE RAFFINÉE À MARRAKECH
-            </motion.h2>
+              <span className="hero-title-line">EXPÉRIENCE CULINAIRE RAFFINÉE À MARRAKECH</span>
+            </motion.h1>
             
             {/* Description avec animation fade-in */}
             <motion.p 
@@ -163,7 +163,11 @@ function Accueil() {
             <p className="about-description">
               Plus qu'un restaurant, La Madeleine est une invitation à explorer les saveurs authentiques du Maroc. 
               Notre cuisine fusionne tradition marocaine et techniques gastronomiques modernes pour créer des 
-              expériences culinaires uniques.
+              expériences culinaires uniques qui éveillent tous vos sens.
+            </p>
+            <p className="about-description">
+              Depuis notre ouverture, nous nous efforçons de préserver l'authenticité des recettes ancestrales 
+              tout en apportant une touche contemporaine qui séduit les palais les plus exigeants.
             </p>
           </motion.div>
         </div>
@@ -218,40 +222,7 @@ function Accueil() {
         </div>
       </section>
 
-      {/* Section Notre Histoire */}
-      <section className="story-section">
-        <div className="story-background">
-          <img src="/3.jpg" alt="Histoire" className="story-bg-image" />
-          <div className="story-overlay"></div>
-        </div>
-        <div className="container">
-          <motion.div 
-            className="story-content"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            <h2 className="story-title">Notre Histoire</h2>
-            <p className="story-text">
-              Fondée en 2010 au cœur de Marrakech, La Madeleine est née de la passion d'une famille 
-              pour les saveurs authentiques du Maroc. Notre restaurant combine l'héritage culinaire 
-              séculaire avec une approche moderne et raffinée.
-            </p>
-            <p className="story-text">
-              Chaque recette raconte une histoire, chaque épice évoque un souvenir, et chaque plat 
-              est préparé avec amour et respect pour nos traditions culinaires.
-            </p>
-            <motion.button 
-              className="story-button"
-              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Découvrir notre histoire
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
+
 
       {/* Section L'Expérience */}
       <section className="experience-section">
@@ -376,23 +347,6 @@ function Accueil() {
               }}
             >
               <div className="value-number">03</div>
-              <h3>Innovation</h3>
-              <p>Réinventer les classiques avec des techniques modernes tout en préservant leur essence.</p>
-            </motion.div>
-
-            <motion.div 
-              className="value-card"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              viewport={{ once: true }}
-              whileHover={{ 
-                scale: 1.05, 
-                rotateY: 5,
-                transition: { duration: 0.3 } 
-              }}
-            >
-              <div className="value-number">04</div>
               <h3>Hospitalité</h3>
               <p>Accueillir chaque client comme un membre de notre famille avec chaleur et générosité.</p>
             </motion.div>
@@ -440,6 +394,8 @@ function Accueil() {
                 scale: 1.05,
                 transition: { duration: 0.3 } 
               }}
+              onClick={() => window.open('https://www.instagram.com/lamadeleine.maroc', '_blank')}
+              style={{ cursor: 'pointer' }}
             >
               <div className="story-image-container">
                 <img src="/3.jpg" alt="Story 1" className="story-image" />
@@ -451,6 +407,11 @@ function Accueil() {
                 <div className="story-overlay-text">
                   <h3>À TRAVERS LE TEMPS</h3>
                   <p>Découvrez notre voyage culinaire</p>
+                </div>
+                <div className="instagram-overlay">
+                  <svg className="instagram-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
                 </div>
               </div>
             </motion.div>
@@ -465,6 +426,8 @@ function Accueil() {
                 scale: 1.05,
                 transition: { duration: 0.3 } 
               }}
+              onClick={() => window.open('https://www.instagram.com/lamadeleine.maroc', '_blank')}
+              style={{ cursor: 'pointer' }}
             >
               <div className="story-image-container">
                 <img src="/3.jpg" alt="Story 2" className="story-image" />
@@ -476,6 +439,11 @@ function Accueil() {
                 <div className="story-overlay-text">
                   <h3>L'EXPÉRIENCE</h3>
                   <p>Si vous voyez ceci... c'est un signe pour réserver votre table</p>
+                </div>
+                <div className="instagram-overlay">
+                  <svg className="instagram-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
                 </div>
               </div>
             </motion.div>
@@ -490,6 +458,8 @@ function Accueil() {
                 scale: 1.05,
                 transition: { duration: 0.3 } 
               }}
+              onClick={() => window.open('https://www.instagram.com/lamadeleine.maroc', '_blank')}
+              style={{ cursor: 'pointer' }}
             >
               <div className="story-image-container">
                 <img src="/3.jpg" alt="Story 3" className="story-image" />
@@ -502,33 +472,15 @@ function Accueil() {
                   <h3>LA MÉDINA</h3>
                   <p>Votre lieu de bonheur dans la médina</p>
                 </div>
+                <div className="instagram-overlay">
+                  <svg className="instagram-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </div>
               </div>
             </motion.div>
 
-            <motion.div 
-              className="story-item"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-              viewport={{ once: true }}
-              whileHover={{ 
-                scale: 1.05,
-                transition: { duration: 0.3 } 
-              }}
-            >
-              <div className="story-image-container">
-                <img src="/3.jpg" alt="Story 4" className="story-image" />
-                <div className="video-indicator">
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="camera-icon">
-                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9ZM19 21H5V3H13V9H19V21Z"/>
-                  </svg>
-                </div>
-                <div className="story-overlay-text">
-                  <h3>PASSEZ VOTRE JOURNÉE</h3>
-                  <p>Profitez de votre journée ici à La Madeleine</p>
-                </div>
-              </div>
-            </motion.div>
+
           </motion.div>
 
           <motion.div 
@@ -591,7 +543,9 @@ function Accueil() {
                   <p>"{testimonials[currentTestimonial].text}"</p>
                   <div className="testimonial-rating">
                     {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                      <span key={i} className="star">⭐</span>
+                      <svg key={i} className="star" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      </svg>
                     ))}
                   </div>
                   <div className="testimonial-author">
@@ -602,15 +556,7 @@ function Accueil() {
               </motion.div>
             </div>
 
-            <div className="testimonial-dots">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  className={`dot ${index === currentTestimonial ? 'active' : ''}`}
-                  onClick={() => setCurrentTestimonial(index)}
-                />
-              ))}
-            </div>
+            
           </motion.div>
         </div>
       </section>
