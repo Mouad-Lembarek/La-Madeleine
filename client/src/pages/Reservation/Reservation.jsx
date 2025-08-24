@@ -107,15 +107,6 @@ function ReservationForm() {
               <label>Motif (optionnel)</label>
               <textarea name="motif" value={form.motif} onChange={handleChange} />
 
-              <label>Choix du table</label>
-              <select name="latableid" value={form.latableid} onChange={handleChange} required>
-                <option value="">Sélectionnez une table</option>
-                <option value="1">Près de la fenêtre</option>
-                <option value="2">En terrasse</option>
-                <option value="3">Au centre de la salle</option>
-                <option value="4">Coin tranquille</option>
-              </select>
-
               <button onClick={handleBack}>Retour</button>
               <button type="submit">Réserver</button>
             </>
