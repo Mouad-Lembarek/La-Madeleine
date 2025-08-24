@@ -131,11 +131,11 @@ function Contact() {
               </div>
 
               <div className="form-row">
-                <div className="form-group">
+        <div className="form-group">
                   <label htmlFor="email">Email *</label>
-                  <input type="email" id="email" name="email" required />
-                </div>
-                <div className="form-group">
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div className="form-group">
                   <label htmlFor="phone">Téléphone</label>
                   <input type="tel" id="phone" name="phone" />
                 </div>

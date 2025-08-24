@@ -118,13 +118,13 @@ function ReservationForm() {
       {/* Section du formulaire */}
       <section className="reservation-form-section">
         <div className="reservation-form-content">
-          {confirmation && (
+      {confirmation && (
             <div className="reservation-confirmation">
-              {confirmation}
-            </div>
-          )}
+          {confirmation}
+        </div>
+      )}
           
-          {!confirmation && (
+      {!confirmation && (
             <>
               {/* Header du formulaire */}
               <div className="reservation-form-header">
@@ -236,11 +236,11 @@ function ReservationForm() {
                         SUIVANT
                       </button>
                     </div>
-                  </>
-                )}
+            </>
+          )}
 
-                {step === 2 && (
-                  <>
+          {step === 2 && (
+            <>
                     <div className="form-row">
                       <div className="form-group">
                         <label htmlFor="guests">NOMBRE DE PERSONNES *</label>

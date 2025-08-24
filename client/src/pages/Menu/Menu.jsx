@@ -320,43 +320,65 @@ const platsData = {
 };
 
 const breakfastData = {
-  brunchesMarocains: {
-    title: 'BRUNCHS MAROCAINS',
+  brunches: {
+    title: 'BRUNCHS',
     items: [
-      { name: 'Brunch Fassi', price: '99 MAD', description: 'Harira fassia, Msemmen farci aux amandes & miel, Bghrir, Œufs beldi à l\'huile d\'olive, Fromage frais, olives noires, Pain fassi traditionnel, Thé à la menthe & jus d\'orange' },
-      { name: 'Brunch Marrakchi', price: '99 MAD', description: 'Chfenj, Harira orge, Batbout beldi nature & à l\'huile d\'olive, Msemen nature ou au khliî, Œufs au cumin, Amlou, dattes & fromage beldi, Thé à la menthe & jus d\'orange' },
-      { name: 'Petit déjeuner "Tangerois"', price: '105 MAD', description: 'Assortiment Marocain, Beurre beldi, fromage frais à l\'huile d\'olive et thym, miel, Amlou, confiture, Tagine au œufs et Khlii, Soupe Marocaine, Thé à la menthe Tangérois, Jus d\'orange frais' },
-      { name: 'Brunch Casablancais', price: '99 MAD', description: 'Avocado toast beldi avec œuf poche, Mini batbout farcis, Rghaïf fines herbes, Granola maison aux dattes, Smoothie seasonal/café crème, Pain aux céréales & confiture' },
-      { name: 'Brunch Aroubi', price: '105 MAD', description: 'Bissara chaude avec huile d\'olive, Msemen bien doré au feu de bois, Matlouh chiar, Œufs durs au cumin, Lait fermenté, Olives vertes & fromage frais, Thé à la menthe du douar' },
-    ]
-  },
-  breakfastsInternationaux: {
-    title: 'PETITS DÉJEUNERS INTERNATIONAUX',
-    items: [
-      { name: 'Petit déjeuner "Français"', price: '95 MAD', description: 'Deux viennoiserie au choix, Corbeille de pain, beurre portion, confiture individuelle, Œufs au choix, Pain perdu caramélisé, Yaourt maison, baule de fruits de saisons, Jus d\'orange frais, café ou thé' },
-      { name: 'Petit déjeuner "Italien"', price: '115 MAD', description: 'Deux viennoiserie au choix, Corbeille de pain, beurre portion, confiture individuelle, Œufs au choix, Assiette de charcuterie Halal, Bruschetta d\'avocat, tomate marinée, salade roquette et mozzarella fraiche, Jus d\'orange frais et Cappuccino' },
-      { name: 'Petit déjeuner "Libanais"', price: '130 MAD', description: 'Corbeille de pain, beurre portion, confiture individuelle, Œufs chakchouka ou au choix, Houmous à l\'huile d\'olive, labneh, Baba Ghanoush, Safiha jobna, Assiette de légumes découpés et salade roquettes, Jus d\'orange frais et thé à la menthe' },
-      { name: 'Petit déjeuner "Espagnol"', price: '130 MAD', description: 'Boisson chaude et jus, corbeille de pain toasté, purée de tomates fraîches, Manchego, tapenade d\'olives vertes, Pesto de persil, huile d\'olives aux herbes' },
-      { name: 'Petit déjeuner "Americain"', price: '150 MAD', description: 'Boisson chaude et jus d\'orange, Saucisse de poulet ou dinde, Œufs au choix, Pancake, Pommes de terre persillées, Yaourt, Toast, Fromage, Légumes' },
-      { name: 'Petit déjeuner "Healthy"', price: '120 MAD', description: 'Tartine d\'avocat et fromage frais, tomate cerise confite, Œufs au choix, Muesli de flocons d\'avoine au yaourt maison, banane, mangue, et fruit secs, Jus d\'orange, Café ou thé à la menthe' },
-    ]
-  },
-  aLaCarte: {
-    title: 'À LA CARTE',
-    items: [
-      { name: 'Corbeille de pain, beurre portion, confiture individuelle', price: '20 MAD', description: 'Pain frais avec beurre et confiture' },
-      { name: 'Panier de Viennoiserie', price: '25 MAD', description: 'Chocolatine, croissant, pain au raisin' },
-      { name: 'Assortiment Marocain', price: '30 MAD', description: 'Baghrir, masamen, harcha, batbout, beurre, confiture, miel' },
-      { name: 'Tagine d\'œuf au Khlii', price: '40 MAD', description: 'Œufs cuits dans un tajine avec khlii' },
-      { name: 'Œufs au choix', price: '25 MAD', description: 'Omelette, œuf au plat, œuf brouillés' },
-      { name: 'Pain perdu caramélisé', price: '20 MAD', description: 'À la cannelle et farcis au chocolat à tartiner' },
-      { name: 'Assiette de charcuterie Halal', price: '30 MAD', description: 'Charcuterie halal sélectionnée' },
-      { name: 'Oeufs chakchouka', price: '40 MAD', description: 'Aux poivrons et tomate épicée' },
-      { name: 'Assortiment libanais', price: '50 MAD', description: 'Houmous, Labneh, Baba Ghanoush, Pain pita' },
-      { name: 'Safiha jobna', price: '45 MAD', description: 'Mini pizza au fromage blanc et thym' },
-      { name: 'Yaourt maison', price: '17 MAD', description: 'Yaourt fait maison' },
-      { name: 'Bole de fruits de saisons', price: '20 MAD', description: 'Fruits frais de saison' },
-      { name: 'Muesli de flocons d\'avoine', price: '60 MAD', description: 'Au yaourt maison, banane, mangue, miel et fruit secs' },
+      { 
+        name: 'Brunch Évasion Nordique', 
+        price: '145 DHS', 
+        components: 'Boisson chaude & jus d\'orange frais, Tartine aux graines, Cream cheese, Saumon fumé, Guacamole maison, Œufs pochés, Sauce hollandaise, Quiche aux épinards, Yaourt grec, Granola, Fruits frais',
+        description: 'Une expérience nordique raffinée avec une tartine aux graines garnie de cream cheese et saumon fumé, accompagnée d\'œufs pochés et sauce hollandaise. Complété par une quiche aux épinards et un yaourt grec avec granola et fruits frais.',
+        image: '/breakfast-nordique.jpg'
+      },
+      { 
+        name: 'Brunch Napoli', 
+        price: '135 DHS', 
+        components: 'Boisson chaude & jus détox, Salade César, Trio de bruschettas, Tomate & basilic, Burrata & réduction de balsamique, Version à la Norma, Verrine de tiramisu',
+        description: 'Un voyage culinaire en Italie avec une salade César classique et un trio de bruschettas : tomate & basilic, burrata avec réduction de balsamique, et version à la Norma. Terminé par une verrine de tiramisu délicate.',
+        image: '/breakfast-napoli.jpg'
+      },
+      { 
+        name: 'Brunch Bagel Royal', 
+        price: '145 DHS', 
+        components: 'Boisson chaude & jus d\'orange, Bagel aux céréales, Laitue, Œufs au plat ou brouillés, Pastrami, Sauce aïoli, Muffin, Yaourt maison, Salade de fruits frais',
+        description: 'Un brunch royal avec un bagel aux céréales garni de laitue, œufs au choix, pastrami et sauce aïoli. Accompagné d\'un muffin, yaourt maison et une salade de fruits frais pour une expérience complète.',
+        image: '/breakfast-bagel.jpg'
+      },
+      { 
+        name: 'Brunch Nature & Harmonie', 
+        price: '135 DHS', 
+        components: 'Boisson chaude & jus détox, Salade mixte, Gaufre à la farine d\'amande, Omelette au choix, Bowl de yaourt nature, Granola maison, Fruits frais, Verrine de graines de chia',
+        description: 'Un brunch équilibré et harmonieux avec une salade mixte, une gaufre à la farine d\'amande et une omelette au choix. Complété par un bowl de yaourt nature avec granola maison, fruits frais et une verrine de graines de chia.',
+        image: '/breakfast-nature.jpg'
+      },
+      { 
+        name: 'Brunch Soleil du Sud', 
+        price: '135 DHS', 
+        components: 'Boisson chaude & jus d\'orange, Soupe blanche, Tajine de khlii, Assortiment de pains et galettes, Batbout, Harcha, Msemen, Chfenj, Beurre & miel, Baghrir, Amlou, Fruits frais, Raib à l\'huile d\'argan, Fruits secs',
+        description: 'Un brunch aux saveurs du sud avec une soupe blanche et un tajine de khlii traditionnel. Accompagné d\'un assortiment de pains et galettes : batbout, harcha, msemen et chfenj. Terminé par du baghrir avec amlou et un raib à l\'huile d\'argan.',
+        image: '/breakfast-soleil.jpg'
+      },
+      { 
+        name: 'Le Croissant Bénédictin', 
+        price: '100 DHS', 
+        components: 'Boisson chaude & jus d\'orange, Croissant salé artisanal, Œufs brouillés, Jambon de dinde, Cream cheese, Cake, Yaourt & fruits frais',
+        description: 'Un croissant salé artisanal garni d\'œufs brouillés, jambon de dinde et cream cheese. Accompagné d\'un cake, yaourt et fruits frais pour un petit déjeuner complet et savoureux.',
+        image: '/breakfast-croissant.jpg'
+      },
+      { 
+        name: '🇺🇸 La Belle Américaine', 
+        price: '145 DHS', 
+        components: 'Boisson chaude & jus d\'orange, Salade Cobb, Toast gratiné, Bacon halal, Saucisse, Œufs au plat, Champignons poêlés, Tomates confites, Hash browns, Pancakes au sirop d\'érable, Yaourt au granola, Fruits frais',
+        description: 'Un brunch américain authentique avec une salade Cobb et un toast gratiné garni de bacon halal, saucisse, œufs au plat, champignons poêlés et tomates confites. Complété par des pancakes au sirop d\'érable et un yaourt au granola.',
+        image: '/breakfast-americaine.jpg'
+      },
+      { 
+        name: 'French Toast Chic', 
+        price: '135 DHS', 
+        components: 'Boisson chaude & jus d\'orange, Salade mixte, Croque-monsieur ou croque-madame, Tomates à la provençale, Mini-viennoiseries, Verrine de yaourt au miel, Fruits rouges',
+        description: 'Un brunch chic avec une salade mixte et un croque-monsieur ou croque-madame accompagné de tomates à la provençale. Complété par des mini-viennoiseries et une verrine de yaourt au miel avec fruits rouges.',
+        image: '/breakfast-french-toast.jpg'
+      }
     ]
   }
 };
@@ -383,11 +405,11 @@ function Menu() {
               <div className="item-name">{item.name}</div>
               <div className="item-components">{item.components}</div>
               <div className="item-description">{item.description}</div>
-            </div>
+      </div>
             <div className="item-price">{item.price}</div>
           </div>
-        </div>
-      </li>
+      </div>
+                </li>
               ))}
             </ul>
           </div>
