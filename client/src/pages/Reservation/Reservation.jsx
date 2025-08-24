@@ -18,7 +18,18 @@ function ReservationForm() {
   const [confirmation, setConfirmation] = useState('');
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    
+    // Special handling for phone field
+    if (name === 'phone') {
+      // Only allow numbers and limit to 10 digits
+      const numbersOnly = value.replace(/\D/g, '');
+      if (numbersOnly.length <= 10) {
+        setForm({ ...form, [name]: numbersOnly });
+      }
+    } else {
+      setForm({ ...form, [name]: value });
+    }
   };
 
   const handleNext = (e) => {
@@ -201,6 +212,10 @@ function ReservationForm() {
                           value={form.phone} 
                           onChange={handleChange} 
                           required 
+                          maxLength="10"
+                          pattern="[0-9]{10}"
+                          placeholder="0612345678"
+                          title="Veuillez entrer exactement 10 chiffres"
                         />
                       </div>
                       <div className="form-group">
@@ -266,18 +281,17 @@ function ReservationForm() {
                           required 
                         />
                       </div>
-                      
-                    </div>
-
-                    <div className="form-group full-width">
-                      <label htmlFor="motif">MOTIF SPÉCIAL (OPTIONNEL)</label>
-                      <textarea 
-                        id="motif"
-                        name="motif" 
-                        value={form.motif} 
-                        onChange={handleChange}
-                        placeholder="Anniversaire, mariage, événement spécial..."
-                      />
+                      <div className="form-group">
+                        <label htmlFor="motif">MOTIF SPÉCIAL</label>
+                        <input 
+                          id="motif"
+                          name="motif" 
+                          type="text"
+                          value={form.motif} 
+                          onChange={handleChange}
+                          placeholder="Anniversaire, mariage, événement spécial..."
+                        />
+                      </div>
                     </div>
 
                     <div className="form-buttons">
