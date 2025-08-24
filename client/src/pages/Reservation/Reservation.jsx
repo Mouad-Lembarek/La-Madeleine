@@ -266,20 +266,7 @@ function ReservationForm() {
                           required 
                         />
                       </div>
-                      <div className="form-group">
-                        <label htmlFor="table">TYPE DE TABLE</label>
-                        <select 
-                          id="table"
-                          name="table" 
-                          value={form.table} 
-                          onChange={handleChange}
-                        >
-                          <option value="">Sélectionnez</option>
-                          <option value="interieur">Intérieur</option>
-                          <option value="terrasse">Terrasse</option>
-                          <option value="fenetre">Près de la fenêtre</option>
-                        </select>
-                      </div>
+                      
                     </div>
 
                     <div className="form-group full-width">
