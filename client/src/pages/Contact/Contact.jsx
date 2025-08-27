@@ -1,7 +1,62 @@
 import './Contact.css';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    first_name: '',
+    last_name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [confirmation, setConfirmation] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    
+    // Special handling for phone field
+    if (name === 'phone') {
+      // Only allow numbers and limit to 10 digits
+      const numbersOnly = value.replace(/\D/g, '');
+      if (numbersOnly.length <= 10) {
+        setFormData({ ...formData, [name]: numbersOnly });
+      }
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/contacts/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      if (response.ok) {
+        setConfirmation('Message envoyé avec succès! Nous vous répondrons dans les plus brefs délais.');
+        setFormData({
+          first_name: '',
+          last_name: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      } else {
+        setConfirmation('Erreur lors de l\'envoi du message. Veuillez réessayer.');
+      }
+    } catch (error) {
+      setConfirmation('Erreur de connexion. Veuillez réessayer.');
+    }
+    
+    setIsSubmitting(false);
+  };
   return (
     <>
       {/* Hero Section - Inspiré de BlackChich */}
@@ -118,41 +173,86 @@ function Contact() {
               </p>
             </div>
 
-            <form className="contact-form">
+            {confirmation && (
+              <div className="contact-confirmation">
+                {confirmation}
+              </div>
+            )}
+
+            <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="firstName">Prénom *</label>
-                  <input type="text" id="firstName" name="firstName" required />
+                  <input 
+                    type="text" 
+                    id="firstName" 
+                    name="first_name" 
+                    value={formData.first_name}
+                    onChange={handleChange}
+                    required 
+                  />
                 </div>
                 <div className="form-group">
                   <label htmlFor="lastName">Nom *</label>
-                  <input type="text" id="lastName" name="lastName" required />
+                  <input 
+                    type="text" 
+                    id="lastName" 
+                    name="last_name" 
+                    value={formData.last_name}
+                    onChange={handleChange}
+                    required 
+                  />
                 </div>
               </div>
 
               <div className="form-row">
-        <div className="form-group">
+                <div className="form-group">
                   <label htmlFor="email">Email *</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div className="form-group">
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    value={formData.email}
+                    onChange={handleChange}
+                    required 
+                  />
+                </div>
+                <div className="form-group">
                   <label htmlFor="phone">Téléphone</label>
-                  <input type="tel" id="phone" name="phone" />
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    value={formData.phone}
+                    onChange={handleChange}
+                    maxLength="10"
+                    pattern="[0-9]{10}"
+                    placeholder="0612345678"
+                    title="Veuillez entrer exactement 10 chiffres"
+                  />
                 </div>
               </div>
 
               <div className="form-group">
-                <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <label htmlFor="message">Message *</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="5" 
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                ></textarea>
               </div>
 
               <motion.button 
                 type="submit" 
                 className="contact-submit-btn"
+                disabled={isSubmitting}
                 whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 whileTap={{ scale: 0.98 }}
               >
-                Envoyer
+                {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
               </motion.button>
             </form>
           </motion.div>

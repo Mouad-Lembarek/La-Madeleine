@@ -316,6 +316,35 @@
   box-shadow: 0 8px 25px rgba(116, 29, 45, 0.4);
 }
 
+/* Confirmation Message */
+.contact-confirmation {
+  background: #e6f7d9;
+  color: #2e4d1c;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem auto;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(44, 94, 36, 0.1);
+}
+
+/* Phone field specific styling */
+.contact-form input[name="phone"] {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+.contact-form input[name="phone"]:invalid {
+  border-color: #ff4444;
+}
+
+.contact-form input[name="phone"]:valid {
+  border-color: #4CAF50;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .contact-info-content {
