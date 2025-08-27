@@ -37,6 +37,38 @@ const categoryIcons = {
   aLaCarte: '🍽️'
 };
 
+// Mapping des images pour chaque famille de boissons
+const familyImages = {
+  cafes: '/boissons/cafes-chauds-glaces-famille.png',
+  chocolats: encodeURI('/boissons/CHOCOLATS CHAUDS.png'),
+  matcha: '/boissons/IMG_1465.png',
+  infusions: '/boissons/IMG_1478.png',
+  frappes: '/boissons/frappes-famille.png',
+  mocktails: '/boissons/MOCKTAILS.png',
+  bubbleTea: encodeURI('/boissons/BUBBLE TEA.png'),
+  bobaDrinks: encodeURI('/boissons/BOBA DRINKS.png'),
+  milkTea: encodeURI('/boissons/MILK TEA.png'),
+  smoothies: '/boissons/SMOOTHIES.png',
+  detox: '/boissons/detox-famille.png',
+  sodas: '/boissons/IMG_1473.png'
+};
+
+// Mapping des icônes pour la navigation
+const familyIcons = {
+  cafes: '/boissons/icons/cafes-chauds-glaces.png',
+  chocolats: '/boissons/icons/chocolat-chaud.png',
+  matcha: '/boissons/icons/MATCHA.png',
+  infusions: '/boissons/icons/INFUSIONS.png',
+  frappes: '/boissons/icons/frappes.png',
+  mocktails: '/boissons/icons/mocktails.png',
+  bubbleTea: '/boissons/icons/bubble-tea.png',
+  bobaDrinks: '/boissons/icons/bubble-tea.png',
+  milkTea: '/boissons/icons/milk-tea.png',
+  smoothies: '/boissons/icons/SMOOTHIES.png',
+  detox: '/boissons/icons/detox.png',
+  sodas: '/boissons/icons/sodas-eaux.png'
+};
+
 const boissonsData = {
   cafes: {
     title: 'CAFÉS CHAUDS & GLACÉS',
@@ -386,6 +418,81 @@ const breakfastData = {
 function Menu() {
   const [selectedCategory, setSelectedCategory] = useState('boissons');
 
+    // Fonction pour rendre les boissons avec design famille
+  const renderDrinksMenuItems = (data) => {
+    const scrollToFamily = (familyKey) => {
+      const element = document.getElementById(`family-${familyKey}`);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    };
+
+    return (
+      <div className="boissons-container">
+        {/* Navigation rapide des familles */}
+        <div className="family-navigation">
+          <h3 className="family-nav-title">Navigation Rapide</h3>
+          <div className="family-nav-grid">
+            {Object.entries(data).map(([key, category]) => (
+              <button
+                key={key}
+                className="family-nav-btn"
+                onClick={() => scrollToFamily(key)}
+                title={category.title}
+              >
+                <img 
+                  src={familyIcons[key]} 
+                  alt={category.title}
+                  className="family-nav-icon"
+                />
+                <span>{category.title}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <ul className="boissons-list">
+          {Object.entries(data).map(([key, category]) => (
+            <li key={key} id={`family-${key}`} className="drink-family">
+              {/* Header de la famille avec image */}
+              <div className="family-header">
+                <div className="family-content">
+                  <h2 className="family-title">{category.title}</h2>
+                  <p className="family-subtitle">
+                    {category.items.length} boisson{category.items.length > 1 ? 's' : ''} disponible{category.items.length > 1 ? 's' : ''}
+                  </p>
+                </div>
+                <img 
+                  src={familyImages[key]} 
+                  alt={category.title}
+                  className="family-bg-image"
+                />
+              </div>
+              
+              {/* Menu des boissons de la famille */}
+              <div className="family-menu">
+                <div className="family-items-grid">
+                  {category.items.map((item, index) => (
+                    <div key={index} className="family-item">
+                      {item.isNew && <div className="new-badge">NEW</div>}
+                      <div className="family-item-name">{item.name}</div>
+                      <div className="family-item-price">{item.price}</div>
+                      <div className="family-item-description">{item.description}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
+  // Fonction pour rendre les autres menus avec design original (breakfast, plats, etc.)
   const renderMenuItems = (data) => {
     return (
       <div className="boissons-container">
@@ -394,21 +501,21 @@ function Menu() {
             <h3 className="boissons-category-title">{category.title}</h3>
             <ul className="boissons-list">
               {category.items.map((item, index) => (
-                      <li key={index} className="boissons-item">
-        {item.isNew && <div className="new-badge">NEW</div>}
-        <div className="item-main">
-          <div className="item-image">
-            <img src={item.image} alt={item.name} />
-          </div>
-          <div className="item-content">
-            <div className="item-content-main">
-              <div className="item-name">{item.name}</div>
-              <div className="item-components">{item.components}</div>
-              <div className="item-description">{item.description}</div>
-      </div>
-            <div className="item-price">{item.price}</div>
-          </div>
-      </div>
+                <li key={index} className="boissons-item">
+                  {item.isNew && <div className="new-badge">NEW</div>}
+                  <div className="item-main">
+                    <div className="item-image">
+                      <img src={item.image} alt={item.name} />
+                    </div>
+                    <div className="item-content">
+                      <div className="item-content-main">
+                        <div className="item-name">{item.name}</div>
+                        <div className="item-components">{item.components}</div>
+                        <div className="item-description">{item.description}</div>
+                      </div>
+                      <div className="item-price">{item.price}</div>
+                    </div>
+                  </div>
                 </li>
               ))}
             </ul>
@@ -438,7 +545,7 @@ function Menu() {
       </div>
       
       <div className="menu-category-content">
-        {selectedCategory === 'boissons' && renderMenuItems(boissonsData)}
+        {selectedCategory === 'boissons' && renderDrinksMenuItems(boissonsData)}
         {selectedCategory === 'salades' && renderMenuItems(saladesData)}
         {selectedCategory === 'entrees' && renderMenuItems(entreesData)}
         {selectedCategory === 'plats' && renderMenuItems(platsData)}
