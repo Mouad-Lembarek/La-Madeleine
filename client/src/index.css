@@ -28,6 +28,31 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global Mobile Optimization */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Touch-friendly elements */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Prevent zoom on input focus on iOS */
+@supports (-webkit-touch-callout: none) {
+  input, select, textarea {
+    font-size: 16px;
+  }
 }
 
 h1 {

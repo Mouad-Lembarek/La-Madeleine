@@ -2260,4 +2260,158 @@ body, #root, .App {
   .value-card p {
     font-size: 0.95rem;
   }
+}
+
+/* Additional Mobile Improvements */
+@media (max-width: 480px) {
+  /* Hero section improvements */
+  .hero-section {
+    padding: 40px 15px;
+    text-align: center;
+  }
+  
+  .hero-title-line {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+    letter-spacing: 2px !important;
+    white-space: normal !important;
+    line-height: 1.2;
+  }
+  
+  /* About section */
+  .about-section {
+    padding: 60px 15px;
+  }
+  
+  .about-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .about-description {
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+  
+  /* Story section */
+  .story-section {
+    padding: 60px 15px;
+  }
+  
+  .story-follow-title {
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .story-follow-text {
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+  
+  .stories-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .story-item {
+    aspect-ratio: 1;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  
+  /* Testimonials section */
+  .testimonials-section {
+    padding: 60px 15px;
+  }
+  
+  .testimonials-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .testimonials-subtitle {
+    font-size: 0.95rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+  
+  .testimonial-card {
+    padding: 2rem 1.5rem;
+    margin: 0 10px;
+  }
+  
+  .testimonial-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .testimonial-author h4 {
+    font-size: 1rem;
+  }
+  
+  .testimonial-author span {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero-section {
+    padding: 30px 10px;
+  }
+  
+  .hero-title-line {
+    font-size: 1.8rem !important;
+    letter-spacing: 1px !important;
+  }
+  
+  .about-section {
+    padding: 50px 10px;
+  }
+  
+  .about-title {
+    font-size: 1.6rem;
+  }
+  
+  .about-description {
+    font-size: 0.9rem;
+  }
+  
+  .story-section {
+    padding: 50px 10px;
+  }
+  
+  .story-follow-title {
+    font-size: 1.5rem;
+  }
+  
+  .story-follow-text {
+    font-size: 0.85rem;
+  }
+  
+  .testimonials-section {
+    padding: 50px 10px;
+  }
+  
+  .testimonials-title {
+    font-size: 1.6rem;
+  }
+  
+  .testimonials-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .testimonial-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .testimonial-text p {
+    font-size: 0.9rem;
+  }
 } 

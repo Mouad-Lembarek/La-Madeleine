@@ -772,4 +772,92 @@
   .culinary-experience-content {
     padding: 0 1rem;
   }
+}
+
+@media (max-width: 320px) {
+  .hero-section {
+    height: 60vh;
+    min-height: 350px;
+  }
+  
+  .hero-content {
+    padding: 0 0.5rem;
+  }
+  
+  .hero-title-line {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .menu-journey-section,
+  .fusion-section,
+  .signature-section,
+  .drinks-section,
+  .culinary-experience-section {
+    padding: 2.5rem 0;
+  }
+  
+  .menu-journey-content,
+  .fusion-content,
+  .signature-content,
+  .drinks-content,
+  .culinary-experience-content {
+    padding: 0 0.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+  
+  .section-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .image-stack {
+    height: 250px;
+  }
+  
+  .overlay-image {
+    bottom: -8px;
+    right: -8px;
+    width: 35%;
+    height: 35%;
+  }
+  
+  .signature-image img,
+  .fusion-image img,
+  .drinks-image img {
+    height: 200px;
+  }
+  
+  .fusion-header {
+    padding: 0 0.5rem;
+  }
+  
+  .culinary-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .culinary-card {
+    padding: 15px;
+  }
+  
+  .culinary-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .culinary-card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
 } 

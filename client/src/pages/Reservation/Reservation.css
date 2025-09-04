@@ -10,43 +10,7 @@
   background: #000;
 }
 
-.reservation-hero-section::before,
-.reservation-hero-section::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100px;
-  background: linear-gradient(180deg, 
-    rgba(116, 29, 45, 0.8) 0%, 
-    rgba(77, 44, 29, 0.6) 50%, 
-    rgba(116, 29, 45, 0.8) 100%);
-  z-index: 5;
-}
-
-.reservation-hero-section::before {
-  left: 0;
-  background-image: 
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 20px,
-      rgba(248, 242, 237, 0.1) 20px,
-      rgba(248, 242, 237, 0.1) 22px
-    );
-}
-
-.reservation-hero-section::after {
-  right: 0;
-  background-image: 
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 20px,
-      rgba(248, 242, 237, 0.1) 20px,
-      rgba(248, 242, 237, 0.1) 22px
-    );
-}
+/* Removed decorative borders */
 
 .reservation-hero-background {
   position: absolute;
@@ -361,10 +325,7 @@
     min-height: 300px;
   }
   
-  .reservation-hero-section::before,
-  .reservation-hero-section::after {
-    width: 50px;
-  }
+  /* Removed decorative borders */
   
   .reservation-form {
     padding: 2rem;
@@ -395,10 +356,7 @@
     min-height: 250px;
   }
   
-  .reservation-hero-section::before,
-  .reservation-hero-section::after {
-    display: none;
-  }
+  /* Removed decorative borders */
   
   .reservation-form {
     padding: 1.5rem;
@@ -417,5 +375,74 @@
   
   .progress-line {
     width: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .reservation-hero-section {
+    height: 35vh;
+    min-height: 220px;
+  }
+  
+  .reservation-hero-content {
+    padding: 0 0.5rem;
+  }
+  
+  .reservation-hero-title-line {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  
+  .reservation-hero-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .reservation-form {
+    padding: 1rem;
+    margin: 0 0.25rem;
+  }
+  
+  .reservation-form-content {
+    padding: 0 0.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+  
+  .btn-submit {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .progress-step {
+    width: 30px;
+    height: 30px;
+    font-size: 0.7rem;
+  }
+  
+  .progress-line {
+    width: 15px;
+  }
+  
+  .step-title {
+    font-size: 0.9rem;
+  }
+  
+  .step-description {
+    font-size: 0.8rem;
   }
 } 
