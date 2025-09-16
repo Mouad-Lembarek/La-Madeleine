@@ -4,10 +4,11 @@ import { useState } from 'react';
 
 function Contact() {
   const [formData, setFormData] = useState({
-    first_name: '',
-    last_name: '',
+    prenom: '',
+    nom: '',
     email: '',
     phone: '',
+    sujet: '',
     message: ''
   });
   const [confirmation, setConfirmation] = useState('');
@@ -40,12 +41,13 @@ function Contact() {
       });
       
       if (response.ok) {
-        setConfirmation('Message envoyé avec succès! Nous vous répondrons dans les plus brefs délais.');
+        setConfirmation('Votre message a été transmis avec succès. Notre équipe le prend en considération.');
         setFormData({
-          first_name: '',
-          last_name: '',
+          prenom: '',
+          nom: '',
           email: '',
           phone: '',
+          sujet: '',
           message: ''
         });
       } else {
@@ -182,23 +184,23 @@ function Contact() {
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group">
-                  <label htmlFor="firstName">Prénom *</label>
+                  <label htmlFor="prenom">Prénom *</label>
                   <input 
                     type="text" 
-                    id="firstName" 
-                    name="first_name" 
-                    value={formData.first_name}
+                    id="prenom" 
+                    name="prenom" 
+                    value={formData.prenom}
                     onChange={handleChange}
                     required 
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="lastName">Nom *</label>
+                  <label htmlFor="nom">Nom *</label>
                   <input 
                     type="text" 
-                    id="lastName" 
-                    name="last_name" 
-                    value={formData.last_name}
+                    id="nom" 
+                    name="nom" 
+                    value={formData.nom}
                     onChange={handleChange}
                     required 
                   />
@@ -231,6 +233,19 @@ function Contact() {
                     title="Veuillez entrer exactement 10 chiffres"
                   />
                 </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="sujet">Sujet *</label>
+                <input 
+                  type="text" 
+                  id="sujet" 
+                  name="sujet" 
+                  value={formData.sujet}
+                  onChange={handleChange}
+                  required 
+                  placeholder="Ex: Question sur le menu, Réservation, etc."
+                />
               </div>
 
               <div className="form-group">

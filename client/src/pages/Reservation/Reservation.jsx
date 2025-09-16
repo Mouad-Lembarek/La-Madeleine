@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 function ReservationForm() {
-  const [step, setStep] = useState(1);
   const [form, setForm] = useState({
     nom: '',
     prenom: '',
@@ -16,6 +15,7 @@ function ReservationForm() {
     table: ''
   });
   const [confirmation, setConfirmation] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,40 +32,39 @@ function ReservationForm() {
     }
   };
 
-  const handleNext = (e) => {
-    e.preventDefault();
-    setStep(2);
-  };
-
-  const handleBack = (e) => {
-    e.preventDefault();
-    setStep(1);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://127.0.0.1:8000/api/reservations/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form)
-    });
-    if (response.ok) {
-      setConfirmation(`Réservation confirmée pour ${form.prenom.charAt(0).toUpperCase() + form.prenom.slice(1)} ${form.nom.charAt(0).toUpperCase() + form.nom.slice(1)}, veuillez vérifier votre mail.`);
-      setForm({
-        nom: '',
-        prenom: '',
-        phone: '',
-        email: '',
-        guests: 1,
-        reservation_date: '',
-        reservation_time: '',
-        motif: '',
-        table: ''
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('http://127.0.0.1:8000/api/reservations/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
       });
-      setStep(1);
-    } else {
-      setConfirmation('Erreur lors de la réservation.');
+      
+      if (response.ok) {
+        const data = await response.json();
+        setConfirmation(`Réservation confirmée pour ${form.prenom.charAt(0).toUpperCase() + form.prenom.slice(1)} ${form.nom.charAt(0).toUpperCase() + form.nom.slice(1)}! Un email de confirmation a été envoyé.`);
+        setForm({
+          nom: '',
+          prenom: '',
+          phone: '',
+          email: '',
+          guests: 1,
+          reservation_date: '',
+          reservation_time: '',
+          motif: '',
+          table: ''
+        });
+      } else {
+        setConfirmation('Erreur lors de la réservation. Veuillez réessayer.');
+      }
+    } catch (error) {
+      setConfirmation('Erreur de connexion. Veuillez réessayer.');
     }
+    
+    setIsSubmitting(false);
   };
 
   return (
@@ -156,158 +155,130 @@ function ReservationForm() {
                 </div>
               </div>
 
-              {/* Indicateur de progression */}
-              <div className="progress-indicator">
-                <div className={`progress-step ${step >= 1 ? 'active' : 'pending'}`}>
-                  1
-                </div>
-                <div className={`progress-line ${step >= 2 ? 'active' : ''}`}></div>
-                <div className={`progress-step ${step >= 2 ? 'active' : 'pending'}`}>
-                  2
-                </div>
-              </div>
-
               {/* Formulaire */}
               <motion.form 
                 className="reservation-form"
-                onSubmit={step === 1 ? handleNext : handleSubmit}
+                onSubmit={handleSubmit}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
               >
-                {step === 1 && (
-                  <>
-                    <div className="form-row">
-                      <div className="form-group">
-                        <label htmlFor="prenom">PRÉNOM *</label>
-                        <input 
-                          id="prenom"
-                          name="prenom" 
-                          type="text"
-                          value={form.prenom} 
-                          onChange={handleChange} 
-                          required 
-                        />
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="nom">NOM *</label>
-                        <input 
-                          id="nom"
-                          name="nom" 
-                          type="text"
-                          value={form.nom} 
-                          onChange={handleChange} 
-                          required 
-                        />
-                      </div>
-                    </div>
-                    
-                    <div className="form-row">
-                      <div className="form-group">
-                        <label htmlFor="phone">TÉLÉPHONE *</label>
-                        <input 
-                          id="phone"
-                          name="phone" 
-                          type="tel"
-                          value={form.phone} 
-                          onChange={handleChange} 
-                          required 
-                          maxLength="10"
-                          pattern="[0-9]{10}"
-                          placeholder="0612345678"
-                          title="Veuillez entrer exactement 10 chiffres"
-                        />
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="email">EMAIL *</label>
-                        <input 
-                          id="email"
-                          name="email" 
-                          type="email"
-                          value={form.email} 
-                          onChange={handleChange} 
-                          required 
-                        />
-                      </div>
-                    </div>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="prenom">PRÉNOM *</label>
+                    <input 
+                      id="prenom"
+                      name="prenom" 
+                      type="text"
+                      value={form.prenom} 
+                      onChange={handleChange} 
+                      required 
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="nom">NOM *</label>
+                    <input 
+                      id="nom"
+                      name="nom" 
+                      type="text"
+                      value={form.nom} 
+                      onChange={handleChange} 
+                      required 
+                    />
+                  </div>
+                </div>
+                
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="phone">TÉLÉPHONE *</label>
+                    <input 
+                      id="phone"
+                      name="phone" 
+                      type="tel"
+                      value={form.phone} 
+                      onChange={handleChange} 
+                      required 
+                      maxLength="10"
+                      pattern="[0-9]{10}"
+                      placeholder="0612345678"
+                      title="Veuillez entrer exactement 10 chiffres"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="email">EMAIL *</label>
+                    <input 
+                      id="email"
+                      name="email" 
+                      type="email"
+                      value={form.email} 
+                      onChange={handleChange} 
+                      required 
+                    />
+                  </div>
+                </div>
 
-                    <div className="form-buttons">
-                      <button type="submit" className="reservation-btn primary">
-                        SUIVANT
-                      </button>
-                    </div>
-            </>
-          )}
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="guests">NOMBRE DE PERSONNES *</label>
+                    <select 
+                      id="guests"
+                      name="guests" 
+                      value={form.guests} 
+                      onChange={handleChange} 
+                      required
+                    >
+                      {[1,2,3,4,5,6,7,8,9,10].map(num => (
+                        <option key={num} value={num}>{num} {num === 1 ? 'personne' : 'personnes'}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="reservation_date">DATE *</label>
+                    <input 
+                      id="reservation_date"
+                      name="reservation_date" 
+                      type="date"
+                      value={form.reservation_date} 
+                      onChange={handleChange} 
+                      required 
+                    />
+                  </div>
+                </div>
 
-          {step === 2 && (
-            <>
-                    <div className="form-row">
-                      <div className="form-group">
-                        <label htmlFor="guests">NOMBRE DE PERSONNES *</label>
-                        <select 
-                          id="guests"
-                          name="guests" 
-                          value={form.guests} 
-                          onChange={handleChange} 
-                          required
-                        >
-                          {[1,2,3,4,5,6,7,8,9,10].map(num => (
-                            <option key={num} value={num}>{num} {num === 1 ? 'personne' : 'personnes'}</option>
-                          ))}
-                        </select>
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="reservation_date">DATE *</label>
-                        <input 
-                          id="reservation_date"
-                          name="reservation_date" 
-                          type="date"
-                          value={form.reservation_date} 
-                          onChange={handleChange} 
-                          required 
-                        />
-                      </div>
-                    </div>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="reservation_time">HEURE *</label>
+                    <input 
+                      id="reservation_time"
+                      name="reservation_time" 
+                      type="time"
+                      value={form.reservation_time} 
+                      onChange={handleChange} 
+                      required 
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="motif">MOTIF SPÉCIAL</label>
+                    <input 
+                      id="motif"
+                      name="motif" 
+                      type="text"
+                      value={form.motif} 
+                      onChange={handleChange}
+                      placeholder="Anniversaire, mariage, événement spécial..."
+                    />
+                  </div>
+                </div>
 
-                    <div className="form-row">
-                      <div className="form-group">
-                        <label htmlFor="reservation_time">HEURE *</label>
-                        <input 
-                          id="reservation_time"
-                          name="reservation_time" 
-                          type="time"
-                          value={form.reservation_time} 
-                          onChange={handleChange} 
-                          required 
-                        />
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="motif">MOTIF SPÉCIAL</label>
-                        <input 
-                          id="motif"
-                          name="motif" 
-                          type="text"
-                          value={form.motif} 
-                          onChange={handleChange}
-                          placeholder="Anniversaire, mariage, événement spécial..."
-                        />
-                      </div>
-                    </div>
-
-                    <div className="form-buttons">
-                      <button 
-                        type="button" 
-                        onClick={handleBack} 
-                        className="reservation-btn secondary"
-                      >
-                        RETOUR
-                      </button>
-                      <button type="submit" className="reservation-btn primary">
-                        RÉSERVER
-                      </button>
-                    </div>
-                  </>
-                )}
+                <div className="form-buttons">
+                  <button 
+                    type="submit" 
+                    className="reservation-btn primary"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'ENVOI EN COURS...' : 'RÉSERVER'}
+                  </button>
+                </div>
               </motion.form>
             </>
           )}
