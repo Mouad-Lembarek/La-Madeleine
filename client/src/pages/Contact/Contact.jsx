@@ -155,6 +155,41 @@ function Contact() {
         </div>
       </section>
 
+      {/* Section Vidéo */}
+      <section className="contact-video-section">
+        <div className="container">
+          <motion.div 
+            className="contact-video-content"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <div className="contact-video-header">
+              <h2 className="contact-video-title">
+                <span className="contact-video-subtitle">DÉCOUVREZ</span>
+                <span className="contact-video-main-title">NOTRE UNIVERS</span>
+              </h2>
+              <p className="contact-video-description">
+                Plongez dans l'ambiance unique de La Madeleine et découvrez notre passion pour la gastronomie.
+              </p>
+            </div>
+            
+            <div className="contact-video-container">
+              <video 
+                className="contact-video"
+                controls
+                preload="metadata"
+                poster="/home.png"
+              >
+                <source src="/Video.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas la lecture de vidéos.
+              </video>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Section Formulaire de Contact */}
       <section className="contact-form-section">
         <div className="container">

@@ -85,6 +85,3 @@ Date: {contact.created_at}
         except Exception as e:
             # Log only; do not fail the API
             print(f"Failed to send contact emails: {e}")
-from django.shortcuts import render
-
-# Create your views here.

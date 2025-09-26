@@ -155,6 +155,74 @@
   border: none;
 }
 
+/* Section Vidéo */
+.contact-video-section {
+  padding: 4rem 0;
+  background: white;
+}
+
+.contact-video-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contact-video-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-video-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-video-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 300;
+  color: #666;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.contact-video-main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #741D2D;
+  line-height: 1.2;
+}
+
+.contact-video-description {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #4D2C1D;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.contact-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
+}
+
 /* Section Formulaire de Contact */
 .contact-form-section {
   padding: 4rem 0;

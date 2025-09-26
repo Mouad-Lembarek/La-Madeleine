@@ -6,6 +6,7 @@ const categories = [
   { key: 'salades', label: 'Salades' },
   { key: 'entrees', label: 'Entrées' },
   { key: 'plats', label: 'Plats' },
+  { key: 'brunches', label: 'Brunches' },
   { key: 'breakfast', label: 'Breakfast' },
 ];
 
@@ -17,12 +18,15 @@ const categoryIcons = {
   infusions: '🌿',
   frappes: '🧋',
   mocktails: '🍹',
-  bubbleTea: '🧋',
   bobaDrinks: '🥤',
   milkTea: '🧋',
   smoothies: '🥤',
   detox: '🍃',
+  jus: '🥤',
   sodas: '🥤',
+  milkShake: '🥤',
+  orangeShake: '🥤',
+  bubbleThe: '🧋',
   saladesFraiches: '🥗',
   assortiments: '🧆',
   soupes: '🍲',
@@ -42,15 +46,18 @@ const familyImages = {
   cafes: '/boissons/cafes-chauds-glaces-famille.png',
   chocolats: encodeURI('/boissons/CHOCOLATS CHAUDS.png'),
   matcha: '/boissons/IMG_1465.png',
-  infusions: '/boissons/IMG_1478.png',
+  infusions: '/boissons/Infusions.png',
   frappes: '/boissons/frappes-famille.png',
   mocktails: '/boissons/MOCKTAILS.png',
-  bubbleTea: encodeURI('/boissons/BUBBLE TEA.png'),
   bobaDrinks: encodeURI('/boissons/BOBA DRINKS.png'),
   milkTea: encodeURI('/boissons/MILK TEA.png'),
   smoothies: '/boissons/SMOOTHIES.png',
   detox: '/boissons/detox-famille.png',
-  sodas: '/boissons/IMG_1473.png'
+  jus: '/boissons/Jus.png',
+  sodas: '/boissons/Soda&eaux.png',
+  milkShake: '/boissons/IMG_1473.png',
+  orangeShake: '/boissons/ORANGE SHAKE.png',
+  bubbleThe: encodeURI('/boissons/BUBBLE TEA.png')
 };
 
 // Mapping des icônes pour la navigation
@@ -61,12 +68,15 @@ const familyIcons = {
   infusions: '/boissons/icons/INFUSIONS.png',
   frappes: '/boissons/icons/frappes.png',
   mocktails: '/boissons/icons/mocktails.png',
-  bubbleTea: '/boissons/icons/bubble-tea.png',
   bobaDrinks: '/boissons/icons/bubble-tea.png',
   milkTea: '/boissons/icons/milk-tea.png',
   smoothies: '/boissons/icons/SMOOTHIES.png',
   detox: '/boissons/icons/detox.png',
-  sodas: '/boissons/icons/sodas-eaux.png'
+  jus: '/boissons/icons/sodas-eaux.png',
+  sodas: '/boissons/icons/sodas-eaux.png',
+  milkShake: '/boissons/icons/sodas-eaux.png',
+  orangeShake: '/boissons/icons/sodas-eaux.png',
+  bubbleThe: '/boissons/icons/bubble-tea.png'
 };
 
 const boissonsData = {
@@ -82,13 +92,13 @@ const boissonsData = {
       { name: 'CAFÉ CRÈME', price: '35 DHS', description: 'Espresso avec crème fraîche' },
       { name: 'CAPPUCCINO', price: '35 DHS', description: 'Espresso, lait chaud et mousse de lait' },
       { name: 'CAFÉ LATTÉ', price: '35 DHS', description: 'Espresso avec beaucoup de lait chaud' },
-      { name: 'LATTE CARAMEL', price: '40 DHS', description: 'Latté avec sirop de caramel', isNew: true },
+      { name: 'LATTE CARAMEL', price: '40 DHS', description: 'Latté avec sirop de caramel' },
       { name: 'MOCCA LATTE', price: '40 DHS', description: 'Latté avec chocolat et café' },
-      { name: 'CAFÉ ROYAL', price: '40 DHS', description: 'Avec crème fraîche et cognac' },
-      { name: 'ICE CAPPUCCINO', price: '45 DHS', description: 'Cappuccino glacé aux saveurs variées' },
+      { name: 'CAFÉ ROYAL', price: '40 DHS', description: 'Avec crème fraîche' },
+      { name: 'ICE CAPPUCCINO', price: '45 DHS', description: 'Cappuccino glacé (caramel, chocolat, vanille)' },
       { name: 'ICE COFFEE LATTE', price: '45 DHS', description: 'Latté glacé rafraîchissant' },
       { name: 'ICE SPANISH LATTE', price: '45 DHS', description: 'Latté glacé à l\'espagnole' },
-      { name: 'FRAPPUCCINO', price: '45 DHS', description: 'Boisson glacée aux saveurs variées' },
+      { name: 'FRAPPUCCINO', price: '45 DHS', description: 'Boisson glacée (chocolat, vanille, caramel, fraise)' },
       { name: 'LATTE GLACÉ', price: '45 DHS', description: 'Latté glacé classique' },
     ]
   },
@@ -108,15 +118,16 @@ const boissonsData = {
     ]
   },
   matcha: {
-    title: 'MATCHA',
+    title: 'MATCHA - CONVENTIONNEL / BIO',
     items: [
-      { name: 'MATCHA LATTE', price: '45 DHS', description: 'Thé vert matcha avec lait' },
-      { name: 'ICED MATCHA LATTE', price: '45 DHS', description: 'Matcha latté glacé' },
-      { name: 'MATCHA VANILLA LATTE', price: '47 DHS', description: 'Matcha avec vanille' },
-      { name: 'MATCHA COCO LATTE', price: '47 DHS', description: 'Matcha avec noix de coco' },
-      { name: 'DIRTY MATCHA', price: '50 DHS', description: 'Matcha + Espresso' },
-      { name: 'ICE MATCHA LAIT', price: '50 DHS', description: 'Matcha glacé avec lait' },
-      { name: 'ICE MATCHA', price: '55 DHS', description: 'Matcha glacé avec café et lait' },
+      { name: 'VIRGIN MATCHA', price: '45 DHS / 95 DHS', description: 'Matcha pur traditionnel' },
+      { name: 'HOT MATCHA LATTE', price: '45 DHS / 95 DHS', description: 'Thé vert matcha avec lait chaud' },
+      { name: 'ICED MATCHA LATTE', price: '45 DHS / 95 DHS', description: 'Matcha latté glacé' },
+      { name: 'MATCHA VANILLA LATTE', price: '45 DHS / 95 DHS', description: 'Matcha avec vanille' },
+      { name: 'MATCHA COCO LATTE', price: '45 DHS / 95 DHS', description: 'Matcha avec noix de coco' },
+      { name: 'DIRTY MATCHA', price: '47 DHS / 95 DHS', description: 'Matcha + Espresso' },
+      { name: 'ICE MATCHA LAIT', price: '47 DHS / 95 DHS', description: 'Matcha glacé avec lait' },
+      { name: 'ICE MATCHA', price: '47 DHS / 95 DHS', description: 'Matcha glacé avec café et lait' },
     ]
   },
   infusions: {
@@ -143,25 +154,14 @@ const boissonsData = {
   mocktails: {
     title: 'MOCKTAILS',
     items: [
+      { name: 'LA MADELEINE SIGNATURE', price: '50 DHS', description: 'Création signature du restaurant' },
       { name: 'MOJITO CLASSIQUE', price: '40 DHS', description: 'Mojito sans alcool' },
       { name: 'MOJITO FRAISE', price: '45 DHS', description: 'Mojito à la fraise' },
       { name: 'MOJITO PASSION', price: '45 DHS', description: 'Mojito à la passion' },
       { name: 'VIRGIN COLADA', price: '48 DHS', description: 'Pina colada sans alcool' },
       { name: 'LITCHI BLOSSOM', price: '48 DHS', description: 'Cocktail litchi floral' },
       { name: 'SUNSHINE BREEZE', price: '50 DHS', description: 'Mangue et fruits rouges' },
-      { name: 'LA MADELEINE SIGNATURE', price: '50 DHS', description: 'Création signature', isNew: true },
       { name: 'HIBISCUS SUNSET', price: '50 DHS', description: 'Cocktail hibiscus' },
-    ]
-  },
-  bubbleTea: {
-    title: 'BUBBLE TEA',
-    items: [
-      { name: 'THÉ NOIR CLASSIQUE', price: '45 DHS', description: 'Bubble tea classique' },
-      { name: 'MATCHA', price: '47 DHS', description: 'Bubble tea matcha' },
-      { name: 'VANILLE CARAMEL', price: '47 DHS', description: 'Vanille et caramel' },
-      { name: 'FRAISE LITCHI', price: '47 DHS', description: 'Fraise et litchi' },
-      { name: 'CHOCOLAT', price: '47 DHS', description: 'Bubble tea chocolat' },
-      { name: 'HIBISCUS LITCHI', price: '47 DHS', description: 'Hibiscus et litchi' },
     ]
   },
   bobaDrinks: {
@@ -206,6 +206,67 @@ const boissonsData = {
       { name: 'IMMUNITÉ', price: '45 DHS', description: 'Orange, curcuma, citron' },
       { name: 'FRAÎCHEUR', price: '45 DHS', description: 'Pastèque, menthe, citron vert' },
       { name: 'HIBISCUS & MENTHE', price: '45 DHS', description: 'Hibiscus et menthe' },
+    ]
+  },
+  jus: {
+    title: 'JUS',
+    items: [
+      { name: 'Jus d\'orange', price: '30 DHS', description: 'Jus d\'orange frais pressé' },
+      { name: 'Jus de carotte', price: '35 DHS', description: 'Jus de carotte naturel' },
+      { name: 'Jus de citron', price: '35 DHS', description: 'Jus de citron frais' },
+      { name: 'Jus de concombre', price: '35 DHS', description: 'Jus de concombre rafraîchissant' },
+      { name: 'Jus de banane', price: '40 DHS', description: 'Jus de banane crémeux' },
+      { name: 'Jus de pomme', price: '45 DHS', description: 'Jus de pomme naturel' },
+      { name: 'Jus de fraise', price: '40 DHS', description: 'Jus de fraise sucré' },
+      { name: 'Jus de passion', price: '40 DHS', description: 'Jus de fruit de la passion' },
+      { name: 'Avocat fruits secs', price: '60 DHS', description: 'Smoothie avocat aux fruits secs' },
+      { name: 'Jus de kiwi', price: '45 DHS', description: 'Jus de kiwi vitaminé' },
+      { name: 'Citronnade gingembre', price: '45 DHS', description: 'Citronnade au gingembre' },
+      { name: 'Jus d\'avocat', price: '45 DHS', description: 'Jus d\'avocat crémeux' },
+      { name: 'Jus d\'ananas', price: '45 DHS', description: 'Jus d\'ananas tropical' },
+      { name: 'Jus de mangue', price: '45 DHS', description: 'Jus de mangue exotique' },
+    ]
+  },
+  milkShake: {
+    title: 'MILK SHAKE',
+    items: [
+      { name: 'MILK SHAKE OREO', price: '65 DHS', description: 'Milk shake aux biscuits Oreo' },
+      { name: 'MILK SHAKE CHOCOLAT', price: '65 DHS', description: 'Milk shake au chocolat' },
+      { name: 'MILK SHAKE CARAMEL', price: '65 DHS', description: 'Milk shake au caramel' },
+      { name: 'MILK SHAKE KINDER', price: '65 DHS', description: 'Milk shake Kinder' },
+      { name: 'MILK SHAKE SNICKERS', price: '65 DHS', description: 'Milk shake Snickers' },
+      { name: 'MILK SHAKE RAFFAELLO', price: '65 DHS', description: 'Milk shake Raffaello' },
+      { name: 'MILK SHAKE FERRERO', price: '65 DHS', description: 'Milk shake Ferrero' },
+      { name: 'MILK SHAKE MANGUE', price: '65 DHS', description: 'Milk shake à la mangue' },
+      { name: 'MILK SHAKE FRAISE', price: '65 DHS', description: 'Milk shake à la fraise' },
+      { name: 'MILK SHAKE FRAMBOISE', price: '65 DHS', description: 'Milk shake à la framboise' },
+      { name: 'MILK SHAKE BLUE BERRY', price: '65 DHS', description: 'Milk shake aux myrtilles' },
+    ]
+  },
+  orangeShake: {
+    title: 'ORANGE SHAKE',
+    items: [
+      { name: 'ORANGE SHAKE FRAISE', price: '70 DHS', description: 'Orange shake à la fraise' },
+      { name: 'ORANGE SHAKE FRAMBOISE', price: '70 DHS', description: 'Orange shake à la framboise' },
+      { name: 'ORANGE SHAKE MANGUE', price: '70 DHS', description: 'Orange shake à la mangue' },
+      { name: 'ORANGE SHAKE BLUE BERRY', price: '70 DHS', description: 'Orange shake aux myrtilles' },
+    ]
+  },
+  bubbleThe: {
+    title: 'BUBBLE THE',
+    items: [
+      { name: 'THÉ NOIR CLASSIQUE', price: '45 DHS', description: 'Thé noir classique' },
+      { name: 'BLACK THE MATCHA', price: '47 DHS', description: 'Thé noir matcha' },
+      { name: 'VANILLE CARAMEL', price: '47 DHS', description: 'Vanille caramel' },
+      { name: 'FRAISE LITCHI', price: '47 DHS', description: 'Fraise litchi' },
+      { name: 'CHOCOLAT', price: '47 DHS', description: 'Bubble tea chocolat' },
+      { name: 'HIBISCUS LITCHI', price: '47 DHS', description: 'Hibiscus litchi' },
+      { name: 'FRUIT PASSION', price: '47 DHS', description: 'Fruit de la passion' },
+      { name: 'MANGUE', price: '47 DHS', description: 'Bubble tea mangue' },
+      { name: 'FRAISE', price: '47 DHS', description: 'Bubble tea fraise' },
+      { name: 'PEACHE', price: '47 DHS', description: 'Bubble tea pêche' },
+      { name: 'BLUEBERRY', price: '47 DHS', description: 'Bubble tea myrtille' },
+      { name: 'LITCHI', price: '47 DHS', description: 'Bubble tea litchi' },
     ]
   },
   sodas: {
@@ -657,65 +718,103 @@ const platsData = {
   }
 };
 
-const breakfastData = {
+const brunchesData = {
   brunches: {
-    title: 'BRUNCHS',
+    title: 'LES BRUNCHS SIGNATURE LA MADELEINE',
+    subtitle: '(Servis de 7h30 à 16h)',
     items: [
       { 
-        name: 'Brunch Évasion Nordique', 
-        price: '145 DHS', 
-        components: 'Boisson chaude & jus d\'orange frais, Tartine aux graines, Cream cheese, Saumon fumé, Guacamole maison, Œufs pochés, Sauce hollandaise, Quiche aux épinards, Yaourt grec, Granola, Fruits frais',
-        description: 'Une expérience nordique raffinée avec une tartine aux graines garnie de cream cheese et saumon fumé, accompagnée d\'œufs pochés et sauce hollandaise. Complété par une quiche aux épinards et un yaourt grec avec granola et fruits frais.',
-        image: '/breakfast-nordique.jpg'
-      },
-      { 
-        name: 'Brunch Napoli', 
-        price: '135 DHS', 
-        components: 'Boisson chaude & jus détox, Salade César, Trio de bruschettas, Tomate & basilic, Burrata & réduction de balsamique, Version à la Norma, Verrine de tiramisu',
-        description: 'Un voyage culinaire en Italie avec une salade César classique et un trio de bruschettas : tomate & basilic, burrata avec réduction de balsamique, et version à la Norma. Terminé par une verrine de tiramisu délicate.',
-        image: '/breakfast-napoli.jpg'
-      },
-      { 
-        name: 'Brunch Bagel Royal', 
-        price: '145 DHS', 
-        components: 'Boisson chaude & jus d\'orange, Bagel aux céréales, Laitue, Œufs au plat ou brouillés, Pastrami, Sauce aïoli, Muffin, Yaourt maison, Salade de fruits frais',
-        description: 'Un brunch royal avec un bagel aux céréales garni de laitue, œufs au choix, pastrami et sauce aïoli. Accompagné d\'un muffin, yaourt maison et une salade de fruits frais pour une expérience complète.',
-        image: '/breakfast-bagel.jpg'
-      },
-      { 
-        name: 'Brunch Nature & Harmonie', 
-        price: '135 DHS', 
-        components: 'Boisson chaude & jus détox, Salade mixte, Gaufre à la farine d\'amande, Omelette au choix, Bowl de yaourt nature, Granola maison, Fruits frais, Verrine de graines de chia',
-        description: 'Un brunch équilibré et harmonieux avec une salade mixte, une gaufre à la farine d\'amande et une omelette au choix. Complété par un bowl de yaourt nature avec granola maison, fruits frais et une verrine de graines de chia.',
-        image: '/breakfast-nature.jpg'
+        name: 'Le Croissant Bénédictin', 
+        price: '120 DHS', 
+        components: 'Boisson chaude & jus d\'orange, Croissant salé artisanal, Œufs brouillés, Jambon de dinde, Cream cheese, Cake du jour, Quiche aux épinards, Yaourt & fruits frais',
+        description: 'Un croissant salé artisanal garni d\'œufs brouillés, jambon de dinde et cream cheese. Accompagné d\'un cake du jour, quiche aux épinards, yaourt et fruits frais pour un brunch complet et savoureux.',
+        image: '/breakfast-croissant.jpg'
       },
       { 
         name: 'Brunch Soleil du Sud', 
         price: '135 DHS', 
-        components: 'Boisson chaude & jus d\'orange, Soupe blanche, Tajine de khlii, Assortiment de pains et galettes, Batbout, Harcha, Msemen, Chfenj, Beurre & miel, Baghrir, Amlou, Fruits frais, Raib à l\'huile d\'argan, Fruits secs',
-        description: 'Un brunch aux saveurs du sud avec une soupe blanche et un tajine de khlii traditionnel. Accompagné d\'un assortiment de pains et galettes : batbout, harcha, msemen et chfenj. Terminé par du baghrir avec amlou et un raib à l\'huile d\'argan.',
+        components: 'Boisson chaude & jus d\'orange, Bissara, Tajine de khlii, Assortiment de pains et galettes : batbout, harcha, msemen, churro, Beurre & miel, Baghrir servi avec amlou et fruits frais, Raib à l\'huile d\'argan et fruits secs',
+        description: 'Un brunch aux saveurs du sud avec bissara et tajine de khlii traditionnel. Accompagné d\'un assortiment de pains et galettes : batbout, harcha, msemen, churro. Terminé par du baghrir avec amlou et un raib à l\'huile d\'argan.',
         image: '/breakfast-soleil.jpg'
-      },
-      { 
-        name: 'Le Croissant Bénédictin', 
-        price: '100 DHS', 
-        components: 'Boisson chaude & jus d\'orange, Croissant salé artisanal, Œufs brouillés, Jambon de dinde, Cream cheese, Cake, Yaourt & fruits frais',
-        description: 'Un croissant salé artisanal garni d\'œufs brouillés, jambon de dinde et cream cheese. Accompagné d\'un cake, yaourt et fruits frais pour un petit déjeuner complet et savoureux.',
-        image: '/breakfast-croissant.jpg'
       },
       { 
         name: '🇺🇸 La Belle Américaine', 
         price: '145 DHS', 
-        components: 'Boisson chaude & jus d\'orange, Salade Cobb, Toast gratiné, Bacon halal, Saucisse, Œufs au plat, Champignons poêlés, Tomates confites, Hash browns, Pancakes au sirop d\'érable, Yaourt au granola, Fruits frais',
+        components: 'Boisson chaude & jus d\'orange, Salade Cobb, Toast gratiné avec bacon halal, saucisse, œufs au plat, champignons poêlés, tomates confites et hash browns, Pancakes au sirop d\'érable, Yaourt au granola & fruits frais',
         description: 'Un brunch américain authentique avec une salade Cobb et un toast gratiné garni de bacon halal, saucisse, œufs au plat, champignons poêlés et tomates confites. Complété par des pancakes au sirop d\'érable et un yaourt au granola.',
         image: '/breakfast-americaine.jpg'
       },
       { 
-        name: 'French Toast Chic', 
-        price: '135 DHS', 
-        components: 'Boisson chaude & jus d\'orange, Salade mixte, Croque-monsieur ou croque-madame, Tomates à la provençale, Mini-viennoiseries, Verrine de yaourt au miel, Fruits rouges',
-        description: 'Un brunch chic avec une salade mixte et un croque-monsieur ou croque-madame accompagné de tomates à la provençale. Complété par des mini-viennoiseries et une verrine de yaourt au miel avec fruits rouges.',
-        image: '/breakfast-french-toast.jpg'
+        name: 'Brunch Évasion Nordique', 
+        price: '145 DHS', 
+        components: 'Boisson chaude & jus d\'orange frais, Tartine aux graines garnie de cream cheese, saumon fumé, guacamole maison, œufs pochés et sauce hollandaise, Quiche aux épinards, Yaourt grec accompagné de granola et de fruits frais',
+        description: 'Une expérience nordique raffinée avec une tartine aux graines garnie de cream cheese et saumon fumé, accompagnée d\'œufs pochés et sauce hollandaise. Complété par une quiche aux épinards et un yaourt grec avec granola et fruits frais.',
+        image: '/breakfast-nordique.jpg'
+      },
+      { 
+        name: 'Brunch Bagel Royal', 
+        price: '145 DHS', 
+        components: 'Boisson chaude & jus d\'orange, Bagel aux céréales, laitue, œufs au plat ou brouillés, pastrami et sauce aïoli, Muffin, Yaourt maison, Salade de fruits frais',
+        description: 'Un brunch royal avec un bagel aux céréales garni de laitue, œufs au choix, pastrami et sauce aïoli. Accompagné d\'un muffin, yaourt maison et une salade de fruits frais pour une expérience complète.',
+        image: '/breakfast-bagel.jpg'
+      },
+      { 
+        name: 'Brunch Andalou', 
+        price: '145 DHS', 
+        components: 'Boisson chaude & jus d\'orange, Pain grillé, Tortilla, Manchego et charcuterie, Purée de tomate aux herbes fines, Huile olive & ail, Fromage blanc au thym, Salade de fruits, Cake du jour',
+        description: 'Un brunch aux saveurs andalouses avec pain grillé, tortilla, manchego et charcuterie. Accompagné de purée de tomate aux herbes fines, huile d\'olive & ail, fromage blanc au thym, salade de fruits et cake du jour.',
+        image: '/breakfast-nature.jpg'
+      }
+    ]
+  }
+};
+
+const breakfastData = {
+  breakfast: {
+    title: 'BREAKFAST SIGNATURE LA MADELEINE',
+    subtitle: '(Servis de 7h30 à 13h)',
+    items: [
+      { 
+        name: 'Petit Déjeuner Express', 
+        price: '55 DHS', 
+        components: 'Boisson chaude & jus d\'orange, Corbeille de pain, beurre, confiture, Deux Mini viennoiseries',
+        description: 'Un petit déjeuner express parfait pour commencer la journée avec une boisson chaude, jus d\'orange, corbeille de pain avec beurre et confiture, et deux mini viennoiseries.',
+        image: '/breakfast-nature.jpg'
+      },
+      { 
+        name: 'Continental', 
+        price: '75 DHS', 
+        components: 'Boisson chaude & jus d\'orange, Corbeille de pain, beurre, confiture, Omelette nature, Mini-viennoiseries, Yaourt au miel et fruits frais',
+        description: 'Un petit déjeuner continental complet avec boisson chaude, jus d\'orange, corbeille de pain, omelette nature, mini-viennoiseries et yaourt au miel avec fruits frais.',
+        image: '/breakfast-croissant.jpg'
+      },
+      { 
+        name: 'Koutoubia', 
+        price: '85 DHS', 
+        components: 'Boisson chaude & jus d\'orange, Harbal, Œuf au plat, Batbout, harcha, msemen, churro, Fromage blanc, Beurre & miel, Raib et fruits secs',
+        description: 'Un petit déjeuner marocain traditionnel avec harbal, œuf au plat, assortiment de pains : batbout, harcha, msemen, churro, fromage blanc, beurre & miel, et raib avec fruits secs.',
+        image: '/breakfast-soleil.jpg'
+      },
+      { 
+        name: 'Haouz', 
+        price: '85 DHS', 
+        components: 'Boisson chaude & jus d\'orange, Barkoukch, Harcha au lait & Amlou, Pain grillé, Beurre & Olive noir, Œufs aux herbes fraîches',
+        description: 'Un petit déjeuner aux saveurs du Haouz avec barkoukch, harcha au lait et amlou, pain grillé avec beurre et olive noir, et œufs aux herbes fraîches.',
+        image: '/breakfast-bagel.jpg'
+      },
+      { 
+        name: 'Nature', 
+        price: '85 DHS', 
+        components: 'Boisson chaude & jus détox, Pain complet grillé, Omelette aux herbes fraîches, Bowl de yaourt nature, granola maison et fruits frais, Verrine de graines de chia',
+        description: 'Un petit déjeuner nature et équilibré avec pain complet grillé, omelette aux herbes fraîches, bowl de yaourt nature avec granola maison et fruits frais, et verrine de graines de chia.',
+        image: '/breakfast-nature.jpg'
+      },
+      { 
+        name: 'Tangis', 
+        price: '85 DHS', 
+        components: 'Boisson chaude & jus détox, Churros, Poêle œuf tomate, Mini Baghrir servi avec amlou et fruits frais, Paissar (purée de fèves et petit pois), Pain, Fromage frais, tomates confites',
+        description: 'Un petit déjeuner aux saveurs de Tanger avec churros, poêle œuf tomate, mini baghrir avec amlou et fruits frais, paissar (purée de fèves et petit pois), pain, fromage frais et tomates confites.',
+        image: '/breakfast-americaine.jpg'
       }
     ]
   }
@@ -805,6 +904,7 @@ function Menu() {
         {Object.entries(data).map(([key, category]) => (
           <div key={key} className="boissons-category">
             <h3 className="boissons-category-title">{category.title}</h3>
+            {category.subtitle && <p className="boissons-category-subtitle">{category.subtitle}</p>}
             <ul className="boissons-list">
               {category.items.map((item, index) => (
                 <li key={index} className="boissons-item">
@@ -857,6 +957,7 @@ function Menu() {
         {selectedCategory === 'salades' && renderMenuItems(saladesData)}
         {selectedCategory === 'entrees' && renderMenuItems(entreesData)}
         {selectedCategory === 'plats' && renderMenuItems(platsData)}
+        {selectedCategory === 'brunches' && renderMenuItems(brunchesData)}
         {selectedCategory === 'breakfast' && renderMenuItems(breakfastData)}
       </div>
     </div>

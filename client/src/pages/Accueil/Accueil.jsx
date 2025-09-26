@@ -49,7 +49,7 @@ function Accueil() {
     {
       name: "Marie Dubois",
       role: "Cliente fidèle",
-      text: "Depuis 5 ans, je viens régulièrement à La Madeleine. L'ambiance, le service et surtout la cuisine sont toujours parfaits.",
+      text: "Dès ma première visite à La Madeleine, j'ai été conquise par l'ambiance chaleureuse et la qualité exceptionnelle de la cuisine. Un véritable coup de cœur !",
       rating: 5
     }
   ];
@@ -178,6 +178,41 @@ function Accueil() {
         </div>
       </section>
 
+      {/* Section Vidéo */}
+      <section className="home-video-section">
+        <div className="container">
+          <motion.div 
+            className="home-video-content"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <div className="home-video-header">
+              <h2 className="home-video-title">
+                <span className="home-video-subtitle">DÉCOUVREZ</span>
+                <span className="home-video-main-title">NOTRE UNIVERS</span>
+              </h2>
+              <p className="home-video-description">
+                Plongez dans l'ambiance unique de La Madeleine et découvrez notre passion pour la gastronomie.
+              </p>
+            </div>
+            
+            <div className="home-video-container">
+              <video 
+                className="home-video"
+                controls
+                preload="metadata"
+                poster="/home.png"
+              >
+                <source src="/Video.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas la lecture de vidéos.
+              </video>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Section Nos Spécialités - Alternating Modern Layout */}
       <section className="specialites-section">
         <div className="container">
@@ -186,42 +221,42 @@ function Accueil() {
           {/* 1ère spécialité */}
           <div className="specialite-row specialite-row-reverse">
             <div className="specialite-text">
-              <h4 className="specialite-name">Kebabs Traditionnels</h4>
+              <h4 className="specialite-name">Couscous Royal</h4>
               <p className="specialite-desc">
-                Savourez nos brochettes marocaines grillées à la perfection, accompagnées de légumes frais et d'épices authentiques. Une expérience incontournable pour les amateurs de cuisine traditionnelle.
+                Notre couscous royal est un véritable festin avec agneau, poulet, merguez et légumes dans un bouillon parfumé. Le roi des couscous, préparé selon la tradition marocaine.
               </p>
-              <button className="specialite-btn">Découvrir</button>
+              <button className="specialite-btn" onClick={() => navigate('/menu')}>Découvrir</button>
             </div>
             <div className="specialite-image-container">
-              <img src="/1.jpg" alt="Kebabs Traditionnels" className="specialite-image" />
+              <img src="/Plats/Couscous Royale.png" alt="Couscous Royal" className="specialite-image" />
             </div>
           </div>
 
           {/* 2ème spécialité */}
           <div className="specialite-row">
             <div className="specialite-image-container">
-              <img src="/2.jpg" alt="Pâtes Gourmet" className="specialite-image" />
+              <img src="/Plats/Spaghetti a la bolanoise.png" alt="Spaghetti Bolognaise" className="specialite-image" />
             </div>
             <div className="specialite-text">
-              <h4 className="specialite-name">Pâtes Gourmet</h4>
+              <h4 className="specialite-name">Spaghetti Bolognaise</h4>
               <p className="specialite-desc">
-                Découvrez notre fusion méditerranéenne : des pâtes artisanales associées à des ingrédients locaux et des saveurs innovantes, pour une assiette aussi belle que savoureuse.
+                Spaghetti al dente nappés d'une sauce bolognaise traditionnelle mijotée longuement avec de la viande hachée de bœuf. Un classique italien préparé avec amour.
               </p>
-              <button className="specialite-btn">Voir plus</button>
+              <button className="specialite-btn" onClick={() => navigate('/menu')}>Voir plus</button>
             </div>
           </div>
 
           {/* 3ème spécialité */}
           <div className="specialite-row specialite-row-reverse">
             <div className="specialite-text">
-              <h4 className="specialite-name">Assiette Complète</h4>
+              <h4 className="specialite-name">Brochettes de Poulet</h4>
               <p className="specialite-desc">
-                Laissez-vous tenter par notre assiette signature, un voyage gastronomique à travers les spécialités marocaines, servie avec une présentation raffinée et des produits de saison.
+                Brochettes de poulet marinées aux épices marocaines, servies avec riz aux herbes et légumes grillés. Une spécialité grillée qui éveille tous vos sens.
               </p>
-              <button className="specialite-btn">Explorer</button>
+              <button className="specialite-btn" onClick={() => navigate('/menu')}>Explorer</button>
             </div>
             <div className="specialite-image-container">
-              <img src="/3.jpg" alt="Assiette Complète" className="specialite-image" />
+              <img src="/Plats/Brochet de poulet.png" alt="Brochettes de Poulet" className="specialite-image" />
             </div>
           </div>
         </div>
