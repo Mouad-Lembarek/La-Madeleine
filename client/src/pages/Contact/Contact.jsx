@@ -114,13 +114,13 @@ function Contact() {
                 <div className="contact-info-icon">🕐</div>
                 <h3 className="contact-info-title">HEURES D'OUVERTURE</h3>
                 <p className="contact-info-text">Ouvert tous les jours</p>
-                <p className="contact-info-text">12h00 jusqu'à 22h00</p>
+                <p className="contact-info-text">7h30 jusqu'à 1h30</p>
               </div>
 
               <div className="contact-info-block">
                 <div className="contact-info-icon">📞</div>
                 <h3 className="contact-info-title">TÉLÉPHONE</h3>
-                <p className="contact-info-text">+212 (0)6 67 87 10 92</p>
+                <p className="contact-info-text">+212524446045</p>
               </div>
 
               <div className="contact-info-block">

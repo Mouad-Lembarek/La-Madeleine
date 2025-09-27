@@ -502,6 +502,106 @@
   letter-spacing: 1px;
 }
 
+/* Styles pour la navigation des boissons (utilisés aussi pour Petit-déjeuner & Brunch) */
+.boissons-navigation {
+  background: white;
+  padding: 20px 15px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  border: 1px solid rgba(201, 124, 93, 0.1);
+}
+
+.boissons-navigation-title {
+  text-align: center;
+  color: #741D2D;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.boissons-families {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+/* Style spécial pour Petit-déjeuner & Brunch (2 boutons seulement) */
+.petit-dejeuner-brunch .boissons-families {
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Style spécial pour Sucrés (2 boutons sans espace) */
+.sucres-navigation .boissons-families {
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.boissons-family-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 10px;
+  background: #F8F2ED;
+  border: 2px solid rgba(201, 124, 93, 0.2);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: #741D2D;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 80px;
+  flex: 0 0 auto;
+}
+
+.family-icon {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.family-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(13%) sepia(45%) saturate(2289%) hue-rotate(329deg) brightness(91%) contrast(90%);
+  transition: all 0.3s ease;
+}
+
+.family-name {
+  text-align: center;
+  line-height: 1.2;
+}
+
+.boissons-family-btn:hover {
+  background: linear-gradient(135deg, #C97C5D 0%, #741D2D 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(201, 124, 93, 0.3);
+  border-color: #741D2D;
+}
+
+.boissons-family-btn:hover .family-icon img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7495%) hue-rotate(265deg) brightness(117%) contrast(100%);
+  transform: scale(1.1);
+}
+
 /* Design alterné pour les plats - Design Original */
 .boissons-item {
   display: flex;
@@ -1217,6 +1317,41 @@
     margin-bottom: 20px;
   }
   
+  .boissons-navigation {
+    padding: 18px 12px;
+  }
+  
+  .boissons-navigation-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .boissons-families {
+    gap: 10px;
+  }
+  
+  .boissons-family-btn {
+    padding: 10px 6px;
+    font-size: 0.65rem;
+    gap: 5px;
+    min-width: 75px;
+  }
+  
+  .family-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .petit-dejeuner-brunch .boissons-families {
+    gap: 15px;
+    max-width: 350px;
+  }
+  
+  .sucres-navigation .boissons-families {
+    gap: 3px;
+    max-width: 280px;
+  }
+  
   .boissons-item {
     flex-direction: column !important;
     min-height: auto;
@@ -1326,6 +1461,44 @@
     margin-bottom: 15px;
   }
   
+  .boissons-navigation {
+    padding: 15px 10px;
+    margin-bottom: 30px;
+  }
+  
+  .boissons-navigation-title {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+  
+  .boissons-families {
+    gap: 8px;
+    justify-content: space-between;
+  }
+  
+  .boissons-family-btn {
+    padding: 10px 6px;
+    font-size: 0.6rem;
+    gap: 5px;
+    min-width: 70px;
+    flex: 1;
+  }
+  
+  .family-icon {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .petit-dejeuner-brunch .boissons-families {
+    gap: 12px;
+    max-width: 300px;
+  }
+  
+  .sucres-navigation .boissons-families {
+    gap: 2px;
+    max-width: 250px;
+  }
+  
   .boissons-item {
     margin-bottom: 12px;
     border-radius: 10px;
@@ -1416,6 +1589,44 @@
   .boissons-category-subtitle {
     font-size: 0.8rem;
     margin-bottom: 12px;
+  }
+  
+  .boissons-navigation {
+    padding: 12px 8px;
+    margin-bottom: 25px;
+  }
+  
+  .boissons-navigation-title {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+  
+  .boissons-families {
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  
+  .boissons-family-btn {
+    padding: 8px 4px;
+    font-size: 0.5rem;
+    gap: 3px;
+    min-width: 60px;
+    flex: 1;
+  }
+  
+  .family-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .petit-dejeuner-brunch .boissons-families {
+    gap: 8px;
+    max-width: 250px;
+  }
+  
+  .sucres-navigation .boissons-families {
+    gap: 1px;
+    max-width: 200px;
   }
   
   .item-image {
