@@ -327,37 +327,16 @@ const boissonsData = {
 
 const entreesData = {
   assortiments: {
-    title: 'ASSORTIMENTS',
+    title: 'ENTRÉES / APÉRITIFS (1 ou 2 pers.)',
     items: [
-      { name: 'Assortiment de salades marocaines', price: '95 MAD 1PRS / 160 2PRS', description: 'Zaalouk, taktouka, carottes au cumin, poivrons grillés, foie mariné à la chermoula, cervelle marinée à la chermoula' },
-      { name: 'Assortiment de briouates', price: '105 MAD 1PRS / 190 2PRS', description: 'Farcies à la viande hachée, au fromage, aux légumes, aux épinards et saumon, ainsi qu\'au poulet et ananas' },
-      { name: 'Assortiment Oriental', price: '80 MAD 1PRS / 150 2PRS', description: 'Houmous, labneh, muhammara, kaba, pain pita' },
-    ]
-  },
-  soupes: {
-    title: 'SOUPES TRADITIONNELLES',
-    items: [
-      { 
-        name: 'Harira Maison', 
-        price: '65 MAD', 
-        components: 'Lentilles, Tomates, Viande, Épices, Dattes, Chebakia',
-        description: 'Harira traditionnelle marocaine aux lentilles et tomates, servie avec dattes et chebakia. Parfaite pour le ramadan.',
-        image: '/Plats/Harira.png'
-      },
-      { 
-        name: 'Barbouche', 
-        price: '65 MAD', 
-        components: 'Escargots, Bouillon épicé, Herbes, Épices marocaines',
-        description: 'Barbouche traditionnel aux escargots mijotés dans un bouillon épicé aux herbes et épices marocaines.',
-        image: '/Plats/Barbouch.png'
-      },
-      { 
-        name: 'Créme de Pistou', 
-        price: '55 MAD', 
-        components: 'Basilic, Tomates, Haricots verts, Fromage, Huile d\'olive',
-        description: 'Créme de pistou provençale au basilic, tomates et haricots verts, agrémentée de fromage et huile d\'olive.',
-        image: '/Plats/Créme de Pistou.png'
-      },
+      { name: 'Assortiment de Salades Marocaines', price: '95 MAD / 160 MAD', description: 'Zaalouk, taktouka, carottes au cumin, poivrons grillés, lentilles mijotées avec de la viande séchée, Haricots blancs parfumés au cumin et au citron confit' },
+      { name: 'Assortiment de Briouates Maison', price: '105 MAD / 190 MAD', description: 'Viande hachée, fromage, légumes, épinards-saumon, poulet-ananas' },
+      { name: 'Assortiment Oriental', price: '80 MAD / 150 MAD', description: 'Houmous, labneh, muhammara, kébbé, BABA GHANOUCH, feuilles de vigne farcies au riz, Houmous de betterave' },
+      { name: 'Assortiment de Bruschettas', price: '85 MAD / 160 MAD', description: 'Tomates basilic, mozzarella, variations gourmandes' },
+      { name: 'Pulpo a la Gallega', price: '85 MAD / 160 MAD', description: 'Poulpe tendre, pommes de terre, paprika fumé' },
+      { name: 'Gambas al Ajillo', price: '70 MAD / 130 MAD', description: 'Crevettes à l\'ail, HUILE D\'OLIVE, TOMATE CERISE, BASILIQUE, CRÈME FRAICHE' },
+      { name: 'Gambas Pil Pil', price: '70 MAD / 130 MAD', description: 'Crevettes sautées à l\'huile d\'olive, ail & piment' },
+      { name: 'Harira Maison', price: '85 MAD', description: 'Soupe traditionnelle servie avec dattes & chebakia & ŒUF' },
     ]
   },
   supplement: {
@@ -370,48 +349,109 @@ const entreesData = {
 
 const saladesData = {
   saladesFraiches: {
-    title: 'SALADES FRAÎCHES',
+    title: 'SALADES FRAÎCHES & GOURMANDES',
     items: [
-      { name: 'Salade César', price: '79 MAD', description: 'Poulet croustillant, parmesan, croûtons' },
-      { name: 'Salade Burrata', price: '89 MAD', description: 'Burrata, tomates cerises, roquette, pesto' },
-      { name: 'Salade Marocaine', price: '69 MAD', description: 'Tomates, poivrons, oignons rouges, olives' },
-      { name: 'Salade Océane', price: '95 MAD', description: 'Crevettes, avocat, laitue, mangue' },
+      { name: 'César au Poulet Croustillant', price: '79 MAD', description: 'Parmesan, croûtons, sauce maison' },
+      { name: 'César aux Gambas Grillées', price: '95 MAD', description: 'Gambas marinées, citron, parmesan' },
+      { name: 'Burrata & Fruits de Saison', price: '89 MAD', description: 'Roquette, burrata crémeuse, fruits frais, FRUITS SEC, SAUCE VAINIGRETE' },
+      { name: 'Chèvre Chaud au Miel', price: '85 MAD', description: 'Mesclun, noix caramélisées' },
+      { name: 'Salade quinoa', price: '85 MAD', description: 'quinoa, mangue, avocat, tomates séchées, miel moutarde FRUITS SEC' },
+      { name: 'Salade Bistrot', price: '85 MAD', description: 'Mesclun, Thon, tomate, avocat, roquette, parmesan' },
+      { name: 'Salade Marocaine', price: '75 MAD', description: 'Tomates, poivrons, oignons rouges, olives' },
     ]
   }
 };
 
 const platsData = {
   pates: {
-    title: 'PÂTES & RISOTTOS',
+    title: 'PÂTES & RISOTTOS (Penne, spaghetti ou tagliatelle)',
     items: [
       { 
-        name: 'Spaghetti Bolognaise', 
-        price: '105 MAD', 
-        components: 'Spaghetti, Sauce bolognaise, Viande hachée de bœuf, Oignons, Carottes, Céleri, Parmesan, Basilic frais',
-        description: 'Spaghetti al dente nappés d\'une sauce bolognaise traditionnelle mijotée longuement avec de la viande hachée de bœuf, oignons, carottes et céleri. Garnis de parmesan fraîchement râpé et de feuilles de basilic frais. Un classique italien préparé avec amour.',
+        name: 'Bolognaise', 
+        price: '130 MAD', 
+        components: 'Sauce tomate maison, viande hachée',
+        description: 'Sauce bolognaise traditionnelle mijotée longuement avec de la viande hachée de bœuf, oignons, carottes et céleri.',
         image: '/Plats/Spaghetti a la bolanoise.png'
       },
       { 
+        name: 'Fruits de Mer', 
+        price: '160 MAD', 
+        components: 'Crevettes, calamars, moules',
+        description: 'Pâtes fraîches aux fruits de mer avec crevettes, calamars et moules.',
+        image: '/Plats/Pattes Fruits de Mer.png'
+      },
+      { 
+        name: 'ALFREDO - Poulet & Champignons', 
+        price: '120 MAD', 
+        components: 'Poulet, champignons, sauce alfredo',
+        description: 'Pâtes à la sauce alfredo avec poulet et champignons.',
+      },
+      { 
+        name: 'Crème de Truffe & Champignons', 
+        price: '170 MAD', 
+        components: 'Crème de truffe, champignons',
+        description: 'Pâtes à la crème de truffe et champignons.',
+      },
+      { 
+        name: 'Sicilienne', 
+        price: '140 MAD', 
+        components: 'Câpres, anchois, olives, sauce tomate',
+        description: 'Pâtes à la sicilienne avec câpres, anchois et olives.',
+      },
+      { 
+        name: 'Crème de Pesto', 
+        price: '130 MAD', 
+        components: 'Basilic & courgettes',
+        description: 'Pâtes à la crème de pesto avec basilic et courgettes.',
+      },
+      { 
+        name: 'Primavera', 
+        price: '120 MAD', 
+        components: 'Légumes de saison, crème fraîche ou ail & huile d\'olive',
+        description: 'Pâtes aux légumes de saison avec crème fraîche ou ail et huile d\'olive.',
+      },
+      { 
         name: 'Raviolis Ricotta & Épinards', 
-        price: '115 MAD', 
-        components: 'Raviolis frais, Ricotta crémeuse, Épinards frais, Sauce aux champignons sauvages, Parmesan, Basilic frais',
-        description: 'Raviolis frais farcis à la ricotta crémeuse et aux épinards frais, servis dans une sauce aux champignons sauvages. Garnis de copeaux de parmesan et de feuilles de basilic frais. Une harmonie parfaite entre douceur et fraîcheur.',
+        price: '140 MAD', 
+        components: 'Raviolis frais, Ricotta crémeuse, Épinards frais',
+        description: 'Raviolis frais farcis à la ricotta crémeuse et aux épinards frais.',
         image: '/Plats/Raviolis ricotta & epinards.png'
       },
       { 
-        name: 'Risotto Nero à l\'Encre de Seiche', 
-        price: '135 MAD', 
-        components: 'Risotto crémeux, Encre de seiche, Calamars frais, Parmesan affiné, Huile d\'olive extra vierge, Persil frais',
-        description: 'Risotto crémeux à l\'encre de seiche avec des calamars frais. Agrémenté de parmesan affiné et d\'un filet d\'huile d\'olive extra vierge. Un voyage gustatif vers la Méditerranée avec cette spécialité italienne audacieuse.',
-        image: '/Plats/Risotto nero a la encre de seiche.png'
+        name: 'Lasagne Maison Bolognaise gratinée', 
+        price: '130 MAD', 
+        components: 'Lasagne, sauce bolognaise, béchamel, fromage',
+        description: 'Lasagne maison gratinée à la bolognaise.',
       },
       { 
-        name: 'Pâtes Fruits de Mer', 
-        price: '125 MAD', 
-        components: 'Pâtes fraîches, Crevettes, Calamars, Moules, Tomates cerises, Ail, Persil, Huile d\'olive',
-        description: 'Pâtes fraîches aux fruits de mer avec crevettes, calamars et moules. Cuisinées avec des tomates cerises, ail et persil dans un filet d\'huile d\'olive. Un plat de la mer authentique et savoureux.',
-        image: '/Plats/Pattes Fruits de Mer.png'
+        name: 'Risotto aux Fruits de Mer', 
+        price: '160 MAD', 
+        components: 'Risotto, fruits de mer, crème de bisque',
+        description: 'Risotto aux fruits de mer avec crème de bisque.',
       },
+      { 
+        name: 'Risotto à la Crème de Truffe & Champignons', 
+        price: '170 MAD', 
+        components: 'Risotto, crème de truffe, champignons',
+        description: 'Risotto à la crème de truffe et champignons.',
+      },
+      { 
+        name: 'Risotto Nero (à l\'encre de seiche)', 
+        price: '190 MAD', 
+        components: 'Risotto, encre de seiche, Gambas & courgettes',
+        description: 'Risotto à l\'encre de seiche avec gambas et courgettes.',
+        image: '/Plats/Risotto nero a la encre de seiche.png'
+      },
+    ]
+  },
+  volaille: {
+    title: '🍗 VOLAILLE & RECETTES DU MONDE (2 garnitures : riz, légumes, purée, pâtes ou salade)',
+    items: [
+      { name: 'Émincés de Poulet aux Champignons', price: '110 MAD', description: 'Émincés de poulet tendre aux champignons sautés' },
+      { name: 'Poulet à la Florentine (épinards & mozzarella)', price: '120 MAD', description: 'Poulet pané aux épinards et mozzarella fondante' },
+      { name: 'Suprême de Poulet à la crème du Truffe', price: '180 MAD', description: 'Suprême de poulet nappé d\'une crème de truffe délicate' },
+      { name: 'Poulet Parmigiana gratiné', price: '140 MAD', description: 'Poulet pané gratiné à la parmigiana' },
+      { name: 'Escalope Milanaise', price: '100 MAD', description: 'Escalope de poulet panée à la milanaise' },
     ]
   },
   pizzas: {
@@ -494,6 +534,39 @@ const platsData = {
         description: 'Pizza marocaine avec merguez, poivrons et oignons. Un mélange de saveurs orientales et italiennes.',
         image: '/Plats/Pizzas/Pizza Ramdania.png'
       },
+    ]
+  },
+  viandes: {
+    title: 'VIANDES GRILLÉES & SAUTÉS (2 garnitures au choix)',
+    items: [
+      { name: 'Filet de Bœuf grillé, sauce au choix', price: '240 MAD', description: 'Gorgonzola, poivre vert, champignon ou morilles' },
+      { name: 'Entrecôte de Bœuf, sauce au choix', price: '280 MAD', description: 'Entrecôte de bœuf grillée avec sauce au choix' },
+      { name: 'Émincé de Filet de Bœuf aux Morilles', price: '200 MAD', description: 'Émincé de filet de bœuf aux morilles' },
+      { name: 'Médaillon de Bœuf « Marco Polo »', price: '220 MAD', description: 'Médaillon de bœuf spécial Marco Polo' },
+    ]
+  },
+  poissons: {
+    title: 'POISSONS & SAVEURS MARINES (2 garnitures au choix)',
+    items: [
+      { name: 'Pavé de Saumon au four, crème de bisque', price: '190 MAD', description: 'Pavé de saumon cuit au four avec crème de bisque' },
+      { name: 'Saumon à l\'orange & zestes', price: '190 MAD', description: 'Saumon à l\'orange avec zestes' },
+      { name: 'Saumon sauce épinards & citron', price: '190 MAD', description: 'Saumon avec sauce épinards et citron' },
+      { name: 'Filet de Loup aux citron, orange, yuzu & pesto de roquette', price: '160 MAD', description: 'Filet de loup aux agrumes et pesto de roquette' },
+      { name: 'Loup bar entier farci aux épinards, champignons et fruits de mer', price: '250 MAD', description: 'Loup bar entier farci aux épinards, champignons et fruits de mer' },
+      { name: 'Loup bar en cuisson "al cartoccio"', price: '250 MAD', description: 'Loup bar cuit en papillote' },
+    ]
+  },
+  burgers: {
+    title: 'BURGERS MAISON',
+    items: [
+      { name: 'Classic Queen', price: '95 MAD', description: 'Pain brioché, viande hachée, cheddar, salade iceberg, tomate, oignons caramélisés' },
+      { name: 'Crunchy Chick', price: '90 MAD', description: 'Bun, poulet croustillant, emmental, tomate, salade iceberg' },
+      { name: 'Extase Cheese', price: '110 MAD', description: 'Pain brioché, bœuf haché, brie pané, champignons, mozzarella, roquette, tomates séchées' },
+      { name: 'TRUFFE BURGER', price: '120 MAD', description: 'Un steak juteux de bœuf accompagné de champignons truffés sautés, oignons caramélisés, fromage EMMENTAL et sauce à l\'ail.' },
+      { name: 'majorelle', price: '110 MAD', description: 'Pain khabzat, kafta a la marocaine, œuf au plat, emmental, taktouka, frite mima' },
+      { name: 'Sandwich bab nkab', price: '90 MAD', description: 'Baguette khabzat, poulet mkili a la marocaine, olive, daghmira, citron confit frite mima' },
+      { name: 'sandwich saucisse de foie', price: '130 MAD', description: 'Baguette khabzat, saucisse de foie, zaalouk machoui, emmentale, tomate oignon machoui, frite mima' },
+      { name: 'PHILADELPHIA CHEESE STEAK SANDWICH', price: 'BŒUF 130 MAD / POULET 110 MAD', description: 'Emincé de poulet ou boeuf, oignons, poivrons et champignons couvert de fromage fondu' },
     ]
   },
   grillades: {
@@ -628,104 +701,17 @@ const platsData = {
   marocaines: {
     title: 'SPÉCIALITÉS MAROCAINES',
     items: [
-      { 
-        name: 'Tajine de Poulet aux Pruneaux', 
-        price: '125 MAD', 
-        components: 'Poulet, Pruneaux, Amandes, Oignons, Épices marocaines, Pain maison',
-        description: 'Tajine traditionnel de poulet aux pruneaux et amandes, mijoté aux épices marocaines et servi avec pain maison.',
-        image: '/Plats/Tajine viend hacher aux oeufs.png'
-      },
-      { 
-        name: 'Tajine de Viande Hachée aux Œufs', 
-        price: '129 MAD', 
-        components: 'Viande hachée, Œufs, Sauce tomate, Épices, Pain chaud',
-        description: 'Tajine de viande hachée aux œufs dans une sauce tomate épicée, servi avec pain chaud traditionnel.',
-        image: '/Plats/Tajine viend hacher aux oeufs.png'
-      },
-      { 
-        name: 'Tangia Marrakchia', 
-        price: '140 MAD', 
-        components: 'Viande d\'agneau, Cumin, Citron confit, Ail, Épices',
-        description: 'Tangia marrakchia traditionnelle avec viande d\'agneau mijotée au cumin et citron confit. Une spécialité de Marrakech.',
-        image: '/Plats/Tanjia Marrakechia.png'
-      },
-      { 
-        name: 'Couscous de Poulet et Tfaya', 
-        price: '90 MAD', 
-        components: 'Semoule, Poulet, Oignons caramélisés, Raisins secs, Amandes, Épices',
-        description: 'Couscous traditionnel au poulet avec tfaya (oignons caramélisés aux raisins secs et amandes). Un délice sucré-salé.',
-        image: '/Plats/Couscouss Royal.png'
-      },
-      { 
-        name: 'Couscous au Bœuf', 
-        price: '120 MAD', 
-        components: 'Semoule fine, Viande de bœuf, Légumes de saison, Bouillon épicé',
-        description: 'Couscous traditionnel au bœuf avec légumes de saison dans un bouillon épicé. Un plat réconfortant.',
-        image: '/Plats/Couscous Royale.png'
-      },
-      { 
-        name: 'Couscous Royal', 
-        price: '150 MAD', 
-        components: 'Semoule fine, Agneau, Poulet, Merguez, Légumes de saison, Bouillon épicé',
-        description: 'Couscous royal avec agneau, poulet, merguez et légumes dans un bouillon parfumé. Le roi des couscous.',
-        image: '/Plats/Couscous Royale.png'
-      },
-      { 
-        name: 'Saffa Traditionnelle', 
-        price: '95 MAD / Avec poulet 125 MAD', 
-        components: 'Cheveux d\'ange, Poulet, Fruits secs, Beurre, Sucre',
-        description: 'Saffa traditionnelle aux cheveux d\'ange avec poulet et fruits secs, ou simplement avec beurre et sucre.',
-        image: '/Plats/Safa.png'
-      },
-      { 
-        name: 'Pastilla aux Amandes & Ananas', 
-        price: '129 MAD', 
-        components: 'Pâte filo, Poulet, Amandes, Ananas, Œufs, Épices',
-        description: 'Pastilla traditionnelle au poulet avec amandes et ananas, enveloppée dans de la pâte filo dorée.',
-        image: '/Plats/Pastilla aux amende& ananas.png'
-      },
-      { 
-        name: 'Pastilla aux Fruits de Mer', 
-        price: '129 MAD', 
-        components: 'Pâte filo, Fruits de mer, Œufs, Épices, Persil',
-        description: 'Pastilla aux fruits de mer frais avec œufs et épices, enveloppée dans de la pâte filo croustillante.',
-        image: '/Plats/Pastilla aux Fruits de Mer.png'
-      },
-      { 
-        name: 'Pastilla Végétarienne', 
-        price: '105 MAD', 
-        components: 'Pâte filo, Légumes, Œufs, Épices, Herbes fraîches',
-        description: 'Pastilla végétarienne aux légumes de saison avec œufs et épices, enveloppée dans de la pâte filo.',
-        image: '/Plats/Pastilla Végétarienne.png'
-      },
-      { 
-        name: 'Rfissa de Poulet', 
-        price: '145 MAD', 
-        components: 'Poulet fermier, Lentilles, Msemen, Fenugrec, Épices marocaines',
-        description: 'Rfissa traditionnelle au poulet fermier avec lentilles, msemen et fenugrec. Un plat réconfortant aux saveurs authentiques.',
-        image: '/Plats/Tride de Poulet.png'
-      },
-      { 
-        name: 'Tajine Végétarienne', 
-        price: '95 MAD', 
-        components: 'Légumes de saison, Tomates, Oignons, Épices marocaines, Herbes fraîches',
-        description: 'Tajine végétarienne aux légumes de saison mijotés aux épices marocaines et herbes fraîches. Un délice végétal.',
-        image: '/Plats/Tagine vegetarienne.png'
-      },
-      { 
-        name: 'Assortiment de Briouates', 
-        price: '105 MAD 1PRS / 190 2PRS', 
-        components: 'Briouates variées, Viande, Fromage, Légumes, Épinards, Saumon',
-        description: 'Assortiment de briouates farcies à la viande, fromage, légumes, épinards et saumon. Un voyage gustatif.',
-        image: '/Plats/Assortiment de briwat.png'
-      },
-      { 
-        name: 'Assortiment de Pâtisserie', 
-        price: '75 MAD', 
-        components: 'Gâteaux marocains variés, Pâtisseries traditionnelles',
-        description: 'Assortiment de pâtisseries marocaines traditionnelles. Un délice sucré pour terminer votre repas.',
-        image: '/Plats/Assortiment de briwat.png'
-      },
+      { name: 'Tajine Poulet Citron & Olives', price: '120 MAD', description: 'Tajine traditionnel de poulet au citron et olives' },
+      { name: 'Tajine Kefta aux Œufs', price: '130 MAD', description: 'Tajine de kefta aux œufs' },
+      { name: 'Tajine Makfoul', price: '145 MAD', description: 'Tajine makfoul traditionnel' },
+      { name: 'Tajine Végétarienne', price: '120 MAD', description: 'Tajine végétarien aux légumes' },
+      { name: 'Couscous aux Sept Légumes', price: 'Poulet 90 MAD / Bœuf 120 MAD', description: 'Couscous aux sept légumes avec poulet ou bœuf' },
+      { name: 'Tangia Marrakchia', price: '140 MAD', description: 'Tangia marrakchia traditionnelle' },
+      { name: 'Rfissa Traditionnelle', price: '145 MAD', description: 'Rfissa traditionnelle (chaque mercredi)' },
+      { name: 'Saffa aux Fruits Secs', price: '95 MAD / Avec Poulet 130 MAD', description: 'Saffa aux fruits secs avec ou sans poulet' },
+      { name: 'Pastilla Poulet, Amandes & Ananas', price: '130 MAD', description: 'Pastilla au poulet, amandes et ananas' },
+      { name: 'Pastilla Fruits de Mer', price: '150 MAD', description: 'Pastilla aux fruits de mer' },
+      { name: 'Pastilla Végétarienne', price: '110 MAD', description: 'Pastilla végétarienne' },
     ]
   },
   specialites: {
@@ -743,18 +729,20 @@ const platsData = {
   enfant: {
     title: 'MENU ENFANT',
     items: [
-      { 
-        name: 'Duo de Mini Burgers au Poulet Pané', 
-        price: '69 MAD', 
-        components: 'Mini burgers, Poulet pané, Frites, Ketchup',
-        description: 'Duo de mini burgers au poulet pané, servis avec des frites croustillantes et ketchup.'
-      },
-      { 
-        name: 'Mini Pizza Margherita', 
-        price: '49 MAD', 
-        components: 'Pâte à pizza, Tomate, Mozzarella, Basilic',
-        description: 'Mini pizza Margherita parfaite pour les enfants, avec tomate, mozzarella et basilic.'
-      },
+      { name: 'Deux mini-burgers poulet pané + frites', price: '60 MAD', description: 'Deux mini-burgers au poulet pané avec frites' },
+      { name: 'Deux mini-burgers viande hachée + frites', price: '70 MAD', description: 'Deux mini-burgers à la viande hachée avec frites' },
+      { name: 'Nuggets & frites', price: '60 MAD', description: 'Nuggets de poulet avec frites' },
+      { name: 'Pizza Margherita', price: '50 MAD', description: 'Pizza Margherita pour enfants' },
+    ]
+  },
+  desserts: {
+    title: '🍰 DESSERTS MAISON',
+    items: [
+      { name: 'Assortiment de Gâteaux Marocains', price: '100 MAD', description: 'Assortiment de gâteaux marocains traditionnels' },
+      { name: 'Cigares Pastilla Riz & Cannelle', price: '80 MAD', description: 'Cigares pastilla au riz et cannelle' },
+      { name: 'Cigares Jawhara aux Amandes', price: '70 MAD', description: 'Cigares jawhara aux amandes' },
+      { name: 'Coupe Glacée Marocaine', price: '75 MAD', description: 'Amlou, kaab ghzal, chebakia, orange cannelle' },
+      { name: 'Brookie', price: '90 MAD', description: 'Mélange brownie et cookie, boule de glace' },
     ]
   }
 };
