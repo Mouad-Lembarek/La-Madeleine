@@ -45,7 +45,6 @@ L'équipe de La Madeleine
 Téléphone: +212 524-446045
 https://lamadeleine-maroc.com/
         """
-"""
 
         # Email to restaurant
         resto_subject = f'Nouveau message de contact - {contact.prenom} {contact.nom}'
