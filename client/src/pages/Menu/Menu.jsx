@@ -84,7 +84,12 @@ const familyImages = {
   menuEnfant: '/Menu enfant.png',
   crepesGaufres: '/Crêpes & Gaufres .png',
   glaces: '/Glaces.png',
-  sucres: '/Crêpes & Gaufres .png'
+  sucres: '/Crêpes & Gaufres .png',
+  volaille: '/poulet-frit.png',
+  viandes: '/grillades.png',
+  burgers: '/pizza.png',
+  desserts: '/Glaces.png',
+  specialites: '/specialites.png'
 };
 
 // Mapping des icônes pour la navigation
@@ -117,7 +122,12 @@ const familyIcons = {
   menuEnfant: '/Menu enfant.png',
   crepesGaufres: '/Crêpes & Gaufres .png',
   glaces: '/Glaces.png',
-  sucres: '/Crêpes & Gaufres .png'
+  sucres: '/Crêpes & Gaufres .png',
+  volaille: '/poulet-frit.png',
+  viandes: '/grillades.png',
+  burgers: '/pizza.png',
+  desserts: '/Glaces.png',
+  specialites: '/specialites.png'
 };
 
 const boissonsData = {
