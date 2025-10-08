@@ -59,7 +59,6 @@ Sujet: {contact.sujet}
 Message:
 {contact.message}
 
-ID Contact: {contact.id}
 Date: {contact.created_at}
 """
 

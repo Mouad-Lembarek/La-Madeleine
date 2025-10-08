@@ -72,7 +72,6 @@ Heure: {reservation.reservation_time}
 Nombre de personnes: {reservation.guests}
 Motif: {reservation.motif or 'Non spécifié'}
 Table: {reservation.table or 'À assigner'}
-ID Réservation: {reservation.id}
 
 Cette réservation a été automatiquement confirmée.
         """
