@@ -53,11 +53,23 @@ function Footer() {
           <div className="footer-contact-info">
             <div className="footer-contact-item">
               <FaPhone className="footer-icon" />
-              <span>0524446045</span>
+              <a
+                href="tel:+212524446045"
+                className="footer-phone-link"
+                aria-label="Call La Madeleine"
+              >
+                0524446045
+              </a>
             </div>
             <div className="footer-contact-item">
               <FaEnvelope className="footer-icon" />
-              <span>lamadeleine.maroc@gmail.com</span>
+              <a
+                href="mailto:lamadeleine.maroc@gmail.com"
+                className="footer-email-link"
+                aria-label="Email La Madeleine"
+              >
+                lamadeleine.maroc@gmail.com
+              </a>
             </div>
           </div>
         </div>

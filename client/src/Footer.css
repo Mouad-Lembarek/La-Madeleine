@@ -177,6 +177,38 @@
   min-width: 20px;
 }
 
+.footer-email-link {
+  color: #F8F2ED !important;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  display: inline-block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.footer-email-link:hover {
+  color: #F8F2ED;
+  text-decoration: underline;
+}
+
+.footer-phone-link {
+  color: #F8F2ED !important;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  display: inline-block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.footer-phone-link:hover {
+  color: #F8F2ED;
+  text-decoration: underline;
+}
+
 /* Ligne de séparation */
 .footer-divider {
   height: 2px;
