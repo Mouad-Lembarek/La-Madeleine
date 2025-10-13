@@ -235,7 +235,7 @@ function Accueil() {
           {/* 2ème spécialité */}
           <div className="specialite-row">
             <div className="specialite-image-container">
-              <img src="/Plats/Spaghetti a la bolanoise.png" alt="Spaghetti Bolognaise" className="specialite-image" />
+              <img src="/Plats/Spaghetti_la bolanoise.png" alt="Spaghetti Bolognaise" className="specialite-image" />
             </div>
             <div className="specialite-text">
               <h4 className="specialite-name">Spaghetti Bolognaise</h4>
@@ -256,7 +256,7 @@ function Accueil() {
               <button className="specialite-btn" onClick={() => navigate('/menu')}>Explorer</button>
             </div>
             <div className="specialite-image-container">
-              <img src="/Plats/Brochet de poulet.png" alt="Brochettes de Poulet" className="specialite-image" />
+              <img src="/Plats/Brochet_de_poulet.png" alt="Brochettes de Poulet" className="specialite-image" />
             </div>
           </div>
         </div>

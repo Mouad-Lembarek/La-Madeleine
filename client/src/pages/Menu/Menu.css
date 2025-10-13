@@ -1125,6 +1125,168 @@
   }
 }
 
+/* Navigation rapide sticky pour les familles de boissons */
+.sticky-family-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 2px solid rgba(116, 29, 45, 0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin: 0;
+  padding: 0;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-height: 80px;
+}
+
+
+.sticky-family-nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.sticky-family-nav-title {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-size: 1.2rem;
+  color: #741D2D;
+  margin: 0 0 15px 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.sticky-family-nav-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  max-height: 70px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px 0;
+  visibility: visible !important;
+}
+
+.sticky-family-nav-btn {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(201, 124, 93, 0.3);
+  border-radius: 10px;
+  padding: 10px 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 60px;
+  text-decoration: none;
+  color: #8b7355;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.sticky-family-nav-btn:hover {
+  background: rgba(201, 124, 93, 0.1);
+  border-color: #c97c5d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201, 124, 93, 0.2);
+}
+
+.sticky-family-nav-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 6px;
+  object-fit: contain;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.sticky-family-nav-btn span {
+  font-size: 0.7rem;
+  line-height: 1.2;
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block !important;
+  visibility: visible !important;
+  font-weight: 600;
+}
+
+/* Responsive pour la navigation sticky */
+@media (max-width: 768px) {
+  .sticky-family-nav-content {
+    padding: 12px 15px;
+  }
+  
+  .sticky-family-nav-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .sticky-family-nav-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 6px;
+    max-height: 55px;
+  }
+  
+  .sticky-family-nav-btn {
+    padding: 6px 4px;
+    min-height: 45px;
+    font-size: 0.65rem;
+  }
+  
+  .sticky-family-nav-icon {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 3px;
+  }
+  
+  .sticky-family-nav-btn span {
+    font-size: 0.6rem;
+    max-width: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sticky-family-nav-content {
+    padding: 10px 12px;
+  }
+  
+  .sticky-family-nav-grid {
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+    gap: 4px;
+    max-height: 50px;
+  }
+  
+  .sticky-family-nav-btn {
+    padding: 5px 3px;
+    min-height: 40px;
+  }
+  
+  .sticky-family-nav-icon {
+    width: 16px;
+    height: 16px;
+    margin-bottom: 2px;
+  }
+  
+  .sticky-family-nav-btn span {
+    font-size: 0.55rem;
+    max-width: 80px;
+  }
+}
+
 /* Image du plat - WOW EFFECT */
 .item-image {
   width: 50%;
